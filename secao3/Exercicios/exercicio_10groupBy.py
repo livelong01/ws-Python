@@ -6,12 +6,12 @@ alunos = [{'nome': 'Maria', 'nota': 'A'},
            {'nome': 'Pedro', 'nota': 'C'}]
 
 
-# alunos_agrupados = sorted(alunos, key = lambda a: a['nota']) #outra forma de usar
+# alunos_agrupados = sorted(alunos, key = lambda a: a['nota']) #O lambda é uma FUNCAO que só vai ser usada uma unica VEZ.
 
-def ordenar(aluno):
+def ordenar(aluno): # se for usar uma funcao mais vezes, faça desse jeito. nomeando
     return aluno['nota'] #VAI USAR A NOTA COMO OBJETIVO DE ORDENACAO.
 
-alunos_agrupados = sorted(alunos, key = ordenar)
+alunos_agrupados = sorted(alunos, key = ordenar) # usou sorted pq faz copia rasa, pq se usar "amigos.sort" vc modifica a ORIGINAL!
 
 grupos = groupby(alunos_agrupados, key = ordenar ) # VAI CRIAR GRUPOS USANDO A NOTA COMO KEY!
 
