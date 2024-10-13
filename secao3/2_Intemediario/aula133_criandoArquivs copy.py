@@ -34,6 +34,7 @@ caminho_arquivo += "aula116.txt"
 #(context manager)Uma forma de abrir e fechar automaticamente, é usando o "with open"
 
 with open(caminho_arquivo, 'w+') as arquivo:
+    print(type(arquivo))
     arquivo.write('Linha 1\n')
     arquivo.write('Linha 2\n')
     arquivo.writelines(
