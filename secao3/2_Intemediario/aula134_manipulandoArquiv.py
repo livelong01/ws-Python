@@ -39,3 +39,12 @@ voce reeativar o codigo, ele reescreve mais abaixo repetidamente.
 
 # with open(caminho_arquivo, 'b') as arquivo: #w apaga o arquivo e reescreve por CIMA.
      #MODO BINARIO
+
+
+import os
+
+# os.remove(caminho_arquivo)
+# os.unlink(caminho_arquivo) #AMBOS APAGAM O ARQUIVO.
+
+#RENOMEAR:
+# os.rename(caminho_arquivo, 'aula116-2.txt')
