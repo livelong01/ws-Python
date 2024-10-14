@@ -1,4 +1,11 @@
 #Problema dos parametros mutaveis em funcoes python.
+'''
+Se for usar um parametro, sempre verificar se ele é MUTAVEL, se ele for,
+por exemplo: lista, etc. Entao tem que por None e usar o If para reesvaziar
+o parametro, pq quando ele for chamado, sem ser nomeado, vai reutilizar a lista
+ja criada. E isso pode dar um problema.
+
+'''
 
 def adc_clientes(nome, lista=None):
     if lista is None:
