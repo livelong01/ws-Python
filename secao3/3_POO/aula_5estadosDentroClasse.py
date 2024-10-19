@@ -26,16 +26,19 @@ class Camera:
             return        
         print(f'{self.nome} esta fotografando')
 
-c2 = Camera('Canon')
+c1 = Camera('Canon')
 c2 = Camera('Nikon')
-c2.filmar()
-c2.filmar()
+c1.filmar()
+c1.filmar()
+print(c1.filmando)
 print(c2.filmando)
-print(c2.filmando)
 c2.fotografar()
-c2.fotografar()
-c2.parar_filmar()
-c2.fotografar()
+c1.fotografar()
+c1.parar_filmar()
+c1.fotografar()
+
+#   DICA: APERTAR CRLT + D, E REPETIR O D, PARA QTS VARIAVEIS QUISER ALTERAR COM MSM NOME.
+        #CTRL + D
 
 
 '''
