@@ -24,7 +24,7 @@ class Connection:
         connection.password = password #uma factiorie que cria usuarios.
         return connection 
 
-    @staticmethod
+    @staticmethod #funcao organizacional, mudar nome, mandar msg, deixar legivel algo.
     def log(msg):
         print('LOG: ', msg)
 
