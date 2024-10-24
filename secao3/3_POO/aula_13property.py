@@ -12,6 +12,21 @@
 # - p/ executar ações ao obter um atributo
 # Código cliente - é o código que usa seu código
 
+'''
+RESUMO: 
+Nas outras linguagens, como no java, existia protected, privated, public. 
+E voce escolhia o q podia ser mexido e o que ficava protegido. Dando acesso
+limitado para as pessoas atraves do get. Que deixava a pessoa chamar, mas n editar.
+Fora que quando vc fizesse uma modificacao no codigo principal, n precisaria mexer no
+codigo do cliente, pois n quebrava o codigo. 
+
+No python, se usa o property, que transforma o atributo do objeto em getter.
+assim basta chamar o atributo q ele sera usado normalmente.
+A vantagem é que se eu editar algo no atributo, só precisarei corrigir no @property
+e ele vai funcionar no codigo cliente. Age de forma semelhante as protecoes do java.
+mudou no init, basta mudar no @property e o programa funciona perfeitamente 👍 
+
+'''
 class Caneta:
     def __init__(self, cor):
         #privated, protected public
