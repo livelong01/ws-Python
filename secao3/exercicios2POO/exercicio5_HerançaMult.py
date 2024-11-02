@@ -171,8 +171,11 @@ tatiane = Desinger('Tatiane', 29)
 tatiane.nome = 'Tatiana'
 Luna = Gerente('Luna', 0, 5)
 Luna.projetos = 6
-Luna.liderar_projeto()
 
+
+Luna.liderar_projeto()
+print(Luna.projetos)
+print(Luna.idade)
 departamento = Departamento()
 departamento.adicionar_funcionario(jonathan)
 departamento.adicionar_funcionario(tatiane)
