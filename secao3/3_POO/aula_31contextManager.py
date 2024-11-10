@@ -31,15 +31,25 @@ class MyOpen:
         self._arquivo = open(self.caminho_arquivo, self.modo, encoding = 'utf8')
         return self._arquivo
 
-    def __exit__(self, class_exception, exception_, traceback_):
-           print('Fechando Arquivo')
+    def __exit__(self, class_exception, exception_, traceback_): # class_exception, exception, traceback, sao as informacoes de um erro qd ele aparece, agora com os tres separados, voce pode criar notas, melhorar a excessao e deixar ela com a sua mensagem.
+           print('Fechando Arquivo') # Ou seja, vc pode tratar do erro de forma mais personalizada.
            self._arquivo.close()
+                #    raise class_exception('Minha Mensagem')
+           
+        #    print(class_exception)
+        #    print(exception_)
+        
+        #    print(traceback_)
+           exception_.add_note('Minha nota')
+        #    raise ConnectionError('Nao deu +para conectar')
+
+        #    return True #tratei a excecao.(De um jeito ruim!)
 
 instancia = MyOpen('aula_31contextManager.txt', 'w')
 
 with instancia as arquivo: #O retorno do __enter__ vai para A VARIAVEL "alguma_coisa"
     arquivo.write('Linha1\n')
-    arquivo.write('Linha2\n')
+    arquivo.write('Linha2\n', 123)
     arquivo.write('Linha3\n')
     print('WITH', arquivo)
 
