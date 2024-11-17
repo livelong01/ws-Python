@@ -62,8 +62,9 @@ do repr.
 '''
 @adicionar_repr #decorador da funcao, que adc "repr" a ela! mais
 class Time: 
-    def __init__(self, nome):
+    def __init__(self, nome, ano):
         self.nome = nome 
+        self.ano = ano
     
 @adicionar_repr
 class Planeta:
@@ -72,8 +73,8 @@ class Planeta:
     
 
 # Time = adicionar_repr(Time) #Essa linha adc o repr na classe, tem q posicionar isso sempre no inicio, ANTES de criar o OBJETO.
-brasil = Time('Brasil')
-portugal =Time('Portugal')
+brasil = Time('Brasil', 1995)
+portugal =Time('Portugal', 1999)
 
 # Planeta = adicionar_repr(Planeta) #isso nao fica muito bonito, sobrescrever a classe, por isso se usa o DECORADOR acima DA CLASSE.
 terra = Planeta('Terra')
