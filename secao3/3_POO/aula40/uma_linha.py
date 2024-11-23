@@ -1,5 +1,5 @@
 """
-O que seu módulo faz: #exemplo de DocString
+
 """
 
 
