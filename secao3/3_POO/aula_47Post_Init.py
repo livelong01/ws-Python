@@ -9,30 +9,20 @@
 from dataclasses import dataclass
 
 
-@dataclass(init=False)
+@dataclass
 class Pessoa:
     nome: str
     sobrenome: str
 
-    def __init__(self, nome, sobrenome):  # executado apos o init,
-        # tytoda vez q se cria um construtor('pessoa')
+    @property
+    def nome_completo(self):
+        return f'{self.nome} {self.sobrenome}'
+
+    @nome_completo.setter
+    def nome_completo(self, valor):
+        nome, *sobrenome = valor.split()
         self.nome = nome
-        self.sobrenome = sobrenome
-        self.nome_completo = f'{self.nome} {self.sobrenome}'
-    
-    def __post_init__(self):
-        print('POst Init')  # n sera executado mais..., pq defini 
-        # o meu proprio init manualmente. (so qd foi automatico)
-
-    # @property
-    # def nome_completo(self):
-        # return f'{self.nome} {self.sobrenome}'
-
-    # @nome_completo.setter
-    # def nome_completo(self, valor):
-    #     nome, *sobrenome = valor.split()
-    #     self.nome = nome
-    #     self.sobrenome = ' '.join(sobrenome)
+        self.sobrenome = ' '.join(sobrenome)
 
 
 if __name__ == '__main__':
