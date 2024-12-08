@@ -19,7 +19,7 @@ class Pessoa:
         self.nome = nome
         self.sobrenome = sobrenome
         self.nome_completo = f'{self.nome} {self.sobrenome}'
-    
+
     def __post_init__(self):
         print('POst Init')  # n sera executado mais..., pq defini 
         # o meu proprio init manualmente. (so qd foi automatico)
