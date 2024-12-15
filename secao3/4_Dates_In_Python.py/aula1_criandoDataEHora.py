@@ -31,8 +31,8 @@ print(data3)
 data1 = datetime.strptime("17/04/2020 08:00:00", '%d/%m/%Y %H:%M:%S')
 data2 = datetime.strptime("17/04/2020 09:00:00", '%d/%m/%Y %H:%M:%S')
 data3 = datetime.strptime("17/04/2020 10:00:00", '%d/%m/%Y %H:%M:%S')
- 
- 
+
+
 def escolha(opcao):
     while True:
         try:
@@ -45,19 +45,21 @@ def escolha(opcao):
             return 0
         else:
             return n
- 
-def linha(tam= 42):
-    return '-'* tam
- 
-def cabeçalho (txt):
+
+
+def linha(tam=42):
+    return '-' * tam
+
+
+def cabecalho(txt):
     print(linha())
     print(txt.center(42))
     print(linha())
- 
- 
+
+
 def menu_horarios(lista):
-    cabeçalho('Horários disponíveis para reunião do DA')
- 
+    cabecalho('Horários disponíveis para reunião do DA')
+
     c = 1
     for item in lista:
         print(f' {c} - {item}')
@@ -65,13 +67,13 @@ def menu_horarios(lista):
     print(linha())
     opc = escolha('Qual sua opção? ')
     return opc
- 
- 
- 
+
+
 # menu_horarios(['opcao', '2', '3'])
 while True:
-    resposta = menu_horarios([data1.time(), data2.time(), data3.time(), 'Nenhum dos horários'],)
-    #resposta = menu_horarios(['1 ','2','3','Nenhum dos horários'],)
+    resposta = menu_horarios([data1.time(), data2.time(), data3.time(),
+                              'Nenhum dos horários'],)
+    # resposta = menu_horarios(['1 ','2','3','Nenhum dos horários'],)
     if resposta == 1:
         print(f' Só posso ás {data1.time()} horas ')
         break
