@@ -21,7 +21,7 @@ for root, dirs, files in os.walk(caminho):  # mostra os caminhos.
     for file_ in files:  # mostra todas as pastas e as dentro destas.
         caminho_completo_arquivo = os.path.join(root, file_)
         print('     ', the_counter, 'Files: ', caminho_completo_arquivo)
-        # os.unlink(caminho_completo_arquivo) não use isso (VAI APAGAR TUDO
+        os.unlink(caminho_completo_arquivo)  # não use isso (VAI APAGAR TUDO
         # DENTRO DAS PASTAS (OS ARQUIVOS))
 
 
