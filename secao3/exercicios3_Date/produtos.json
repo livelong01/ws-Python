@@ -1,0 +1,22 @@
+[
+    {
+      "nome": "Notebook",
+      "preco": 1200.50,
+      "quantidade": 2
+    },
+    {
+      "nome": "Mouse",
+      "preco": 25.75,
+      "quantidade": 4
+    },
+    {
+      "nome": "Teclado",
+      "preco": 45.90,
+      "quantidade": 3
+    },
+    {
+      "nome": "Monitor",
+      "preco": 600.00,
+      "quantidade": 1
+    }
+  ]

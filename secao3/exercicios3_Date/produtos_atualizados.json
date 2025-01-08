@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Notebook",
+    "preco": 1200.5,
+    "quantidade": 2,
+    "valor_total": 2401.0
+  },
+  {
+    "nome": "Mouse",
+    "preco": 25.75,
+    "quantidade": 4,
+    "valor_total": 103.0
+  },
+  {
+    "nome": "Teclado",
+    "preco": 45.9,
+    "quantidade": 3,
+    "valor_total": 137.7
+  },
+  {
+    "nome": "Monitor",
+    "preco": 600.0,
+    "quantidade": 1,
+    "valor_total": 600.0
+  }
+]
