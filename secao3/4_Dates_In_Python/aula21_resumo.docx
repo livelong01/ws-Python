@@ -1,0 +1,81 @@
+Resumo da Aula sobre CSV em Python
+O que é um arquivo CSV?
+CSV (Comma Separated Values) é um formato de arquivo que armazena dados em forma de tabela.
+Cada linha representa uma linha da tabela, e as colunas são separadas por vírgulas.
+Usado frequentemente para importar/exportar dados entre sistemas (planilhas, bancos de dados, etc.).
+Pode ser lido em editores de texto ou softwares de planilhas como Excel e Google Sheets.
+Leitura de Arquivos CSV:
+csv.reader:
+
+Lê o arquivo como uma lista de listas.
+Cada linha do arquivo é uma sublista.
+Exemplo:
+python
+Copiar código
+with open(CAMINHO_CSV, 'r', encoding='utf8') as arquivo:
+    leitor = csv.reader(arquivo)
+    for linha in leitor:
+        print(linha)
+Acessar um índice específico:
+python
+Copiar código
+print(linha[1])  # Exibe o valor da segunda coluna.
+csv.DictReader:
+
+Lê o arquivo como uma lista de dicionários.
+As chaves são definidas pela primeira linha do arquivo (cabeçalho).
+Exemplo:
+python
+Copiar código
+with open(CAMINHO_CSV, 'r', encoding='utf8') as arquivo:
+    leitor = csv.DictReader(arquivo)
+    for linha in leitor:
+        print(linha)  # {'Nome': 'Luiz', 'Endereço': 'Av 1'}
+        print(linha['Nome'])  # Acessa o valor da coluna 'Nome'.
+Escrita em Arquivos CSV:
+csv.writer:
+
+Escreve em formato de lista.
+Exemplo:
+python
+Copiar código
+with open(CAMINHO_CSV, 'w', encoding='UTF8', newline='') as arquivo:
+    escritor = csv.writer(arquivo)
+    escritor.writerow(['Nome', 'Endereço'])  # Cabeçalho
+    escritor.writerow(['Luiz Otávio', 'Av 1, 22'])  # Linha de dados
+csv.DictWriter:
+
+Escreve em formato de dicionário.
+Exemplo:
+python
+Copiar código
+with open(CAMINHO_CSV, 'w', encoding='UTF8', newline='') as arquivo:
+    escritor = csv.DictWriter(arquivo, fieldnames=['Nome', 'Endereço'])
+    escritor.writeheader()  # Cabeçalho
+    escritor.writerow({'Nome': 'Luiz Otávio', 'Endereço': 'Av 1, 22'})
+Dicas:
+Use o módulo pathlib para gerenciar caminhos de arquivos de forma mais segura e organizada.
+Sempre use newline='' ao abrir arquivos CSV para evitar linhas extras ao gravar no Windows.
+Desafio: Manipulação de Arquivo CSV 🚀
+Crie um script que faça o seguinte:
+
+Leia um arquivo CSV contendo uma lista de produtos com as colunas: Produto, Quantidade, Preço.
+Calcule o valor total para cada produto (Quantidade * Preço) e adicione como uma nova coluna Total.
+Escreva os dados atualizados em um novo arquivo CSV chamado "produtos_com_totais.csv".
+Utilize csv.DictReader para leitura e csv.DictWriter para escrita.
+Exemplo do arquivo de entrada:
+
+Copiar código
+Produto,Quantidade,Preço
+Arroz,2,3.50
+Feijão,3,4.00
+Macarrão,5,2.00
+Exemplo do arquivo de saída:
+
+mathematica
+Copiar código
+Produto,Quantidade,Preço,Total
+Arroz,2,3.50,7.00
+Feijão,3,4.00,12.00
+Macarrão,5,2.00,10.00
+Boa sorte e mãos à obra! 🚀
