@@ -1,0 +1,31 @@
+📌 Resumo da Aula
+Nesta aula, você aprendeu a manipular arquivos ZIP no Python utilizando o módulo zipfile.ZipFile. Os principais conceitos abordados foram:
+
+Criar arquivos de exemplo para compactação.
+Compactar arquivos em um ZIP.
+Ler arquivos dentro de um ZIP sem descompactá-los.
+Descompactar arquivos para um diretório específico.
+Além disso, o uso dos módulos shutil, os e pathlib ajudou na manipulação de diretórios e arquivos.
+
+🔧 Explicação Prática
+1️⃣ Criando arquivos para compactar
+Antes de compactar, a função criar_arquivos(qtd, zip_dir) gera vários arquivos .txt dentro do diretório escolhido (aula_27_diretorio_zip).
+
+2️⃣ Compactando arquivos
+O bloco with ZipFile(CAMINHO_COMPACTADO, 'w') as zip: cria um arquivo ZIP e adiciona arquivos a ele. O os.walk() percorre os arquivos dentro do diretório e adiciona cada um ao ZIP com zip.write().
+
+3️⃣ Listando arquivos dentro do ZIP
+O bloco with ZipFile(CAMINHO_COMPACTADO, 'r') as zip: lê o ZIP e imprime os nomes dos arquivos contidos nele, sem descompactá-los.
+
+4️⃣ Extraindo os arquivos do ZIP
+O comando zip.extractall(CAMINHO_DESCOMPACTADO) extrai todos os arquivos para um diretório específico.
+
+🎯 Desafio
+Crie um script que:
+✅ Compacte apenas arquivos .txt dentro de um diretório específico.
+✅ Dê a opção ao usuário de listar ou descompactar os arquivos depois da compactação.
+✅ Pergunte ao usuário o nome do ZIP a ser criado.
+
+Dica: Utilize input() para coletar a escolha do usuário.
+
+Quando fizer, me chama para revisar! 🚀😃
