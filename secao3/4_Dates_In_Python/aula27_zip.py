@@ -8,7 +8,7 @@ CAMINHO_RAIZ = Path(__file__).parent
 CAMINHO_ZIP_DIR = CAMINHO_RAIZ / 'aula_27_diretorio_zip'
 CAMINHO_COMPACTADO = CAMINHO_RAIZ / 'aula27_compactado.zip'
 CAMINHO_DESCOMPACTADO = CAMINHO_RAIZ / 'aula27_descompactado'
-
+print(CAMINHO_RAIZ)
 shutil.rmtree(CAMINHO_ZIP_DIR, ignore_errors=True)
 Path.unlink(CAMINHO_COMPACTADO, missing_ok=True)
 shutil.rmtree(str(CAMINHO_COMPACTADO).replace('.zip', ''), ignore_errors=True)
