@@ -1,0 +1,302 @@
+📌 Resumo da Aula: sys.argv
+O módulo sys do Python fornece acesso a argumentos passados na linha de comando ao executar um script. 
+A lista sys.argv contém esses argumentos, onde:
+
+sys.argv[0] → Nome do script sendo executado
+sys.argv[1] em diante → Argumentos passados pelo usuário
+Se o script for chamado assim no terminal:
+
+sh
+Copiar
+Editar
+python meu_script.py argumento1 argumento2
+Então sys.argv conterá:
+
+python
+Copiar
+Editar
+['meu_script.py', 'argumento1', 'argumento2']
+Se o usuário não passar argumentos, seu código imprime "Você não passou argumentos".
+
+🎯 5 Formas de Usar sys.argv na Vida Real
+1️⃣ Automatizar Processos
+
+Criar um script que recebe um arquivo como argumento e processa os dados.
+Exemplo:
+sh
+Copiar
+Editar
+python processar_dados.py dados.csv
+Código:
+python
+Copiar
+Editar
+import sys
+arquivo = sys.argv[1]  # Nome do arquivo passado no terminal
+print(f'Processando {arquivo}...')
+2️⃣ Executar Comandos com Parâmetros
+
+Criar um script para somar dois números passados como argumentos.
+Exemplo:
+sh
+Copiar
+Editar
+python soma.py 10 20
+Código:
+python
+Copiar
+Editar
+import sys
+num1 = int(sys.argv[1])
+num2 = int(sys.argv[2])
+print(f'Soma: {num1 + num2}')
+3️⃣ Automatizar Backups
+
+Criar um script que salva arquivos em um diretório passado pelo usuário.
+Exemplo:
+sh
+Copiar
+Editar
+python backup.py /caminho/do/backup
+Código:
+python
+Copiar
+Editar
+import sys, shutil
+origem = 'meus_arquivos/'
+destino = sys.argv[1]
+shutil.copytree(origem, destino)
+print(f'Backup salvo em {destino}')
+4️⃣ Escolher Configurações Diferentes
+
+Um script que muda o ambiente com base nos argumentos.
+Exemplo:
+sh
+Copiar
+Editar
+python app.py dev
+Código:
+python
+Copiar
+Editar
+import sys
+ambiente = sys.argv[1] if len(sys.argv) > 1 else 'prod'
+print(f'Rodando no ambiente: {ambiente}')
+5️⃣ Filtrar Dados com Argumentos
+
+Criar um script que busca registros em um arquivo CSV conforme um termo passado.
+Exemplo:
+sh
+Copiar
+Editar
+python busca.py cliente123
+Código:
+python
+Copiar
+Editar
+import sys, csv
+termo = sys.argv[1]
+with open('dados.csv') as f:
+    for linha in csv.reader(f):
+        if termo in linha:
+            print(linha)
+🚀 Conclusão
+O sys.argv é útil quando você quer passar informações para o script diretamente
+ no terminal, sem precisar editar o código. Isso facilita a automatização de tarefas,
+  processamento de arquivos, execução de comandos dinâmicos, e muito mais!
+
+
+
+
+
+
+
+Você disse:
+ainda nao entendi direito como usaria isso
+O ChatGPT disse:
+ChatGPT
+Beleza, Jonathan! Vamos quebrar isso de um jeito mais prático pra você entender melhor.
+
+🤔 O que é sys.argv?
+É uma lista que contém os argumentos passados na linha de comando quando você executa um script Python.
+
+💡 Pensa assim:
+Se você rodar um script no terminal assim:
+
+sh
+Copiar
+Editar
+python meu_script.py oi tudo bem?
+O sys.argv vai ter esses valores:
+
+python
+Copiar
+Editar
+['meu_script.py', 'oi', 'tudo', 'bem?']
+Ou seja, o primeiro item (sys.argv[0]) é sempre o nome do script, e os outros são os argumentos passados.
+
+🛠 Exemplo Prático Simples
+Vamos criar um script chamado ola.py que recebe um nome e imprime uma saudação.
+
+1️⃣ Criando o Script (ola.py)
+python
+Copiar
+Editar
+import sys
+
+if len(sys.argv) < 2:  # Verifica se o usuário passou pelo menos 1 argumento
+    print("Você precisa passar um nome!")
+else:
+    nome = sys.argv[1]  # Pega o primeiro argumento passado
+    print(f"Olá, {nome}! Bem-vindo.")
+2️⃣ Rodando no Terminal
+No terminal (cmd, PowerShell ou bash), digite:
+
+sh
+Copiar
+Editar
+python ola.py Jonathan
+🔹 Saída:
+
+css
+Copiar
+Editar
+Olá, Jonathan! Bem-vindo.
+Se você rodar sem passar um nome:
+
+sh
+Copiar
+Editar
+python ola.py
+🔹 Saída:
+
+Copiar
+Editar
+Você precisa passar um nome!
+🎯 5 Casos Reais Onde Isso Pode Ser Útil
+📝 1. Criando Arquivos Rápido
+Quer criar um arquivo sem abrir o editor toda hora?
+
+python
+Copiar
+Editar
+import sys
+
+nome_arquivo = sys.argv[1]  # Nome do arquivo passado como argumento
+
+with open(nome_arquivo, 'w') as f:
+    f.write("Criado via script!")
+
+print(f"Arquivo '{nome_arquivo}' criado com sucesso!")
+✅ No terminal:
+
+sh
+Copiar
+Editar
+python criar_arquivo.py notas.txt
+📌 Isso vai criar um arquivo chamado notas.txt.
+
+🔢 2. Calculadora Simples
+python
+Copiar
+Editar
+import sys
+
+if len(sys.argv) < 4:
+    print("Uso correto: python calculadora.py num1 operador num2")
+else:
+    num1 = float(sys.argv[1])
+    operador = sys.argv[2]
+    num2 = float(sys.argv[3])
+
+    if operador == "+":
+        print(num1 + num2)
+    elif operador == "-":
+        print(num1 - num2)
+    elif operador == "*":
+        print(num1 * num2)
+    elif operador == "/":
+        print(num1 / num2)
+    else:
+        print("Operador inválido!")
+✅ No terminal:
+
+sh
+Copiar
+Editar
+python calculadora.py 10 + 5
+🔹 Saída:
+
+Copiar
+Editar
+15.0
+📂 3. Backup de Arquivos
+python
+Copiar
+Editar
+import sys
+import shutil
+
+origem = sys.argv[1]  # Arquivo de origem
+destino = sys.argv[2]  # Caminho de destino
+
+shutil.copy(origem, destino)
+print(f"Arquivo {origem} copiado para {destino}!")
+✅ No terminal:
+
+sh
+Copiar
+Editar
+python backup.py documento.txt C:/Backup/
+📌 Isso copia documento.txt para C:/Backup/.
+
+📊 4. Filtrar um CSV
+python
+Copiar
+Editar
+import sys
+import csv
+
+busca = sys.argv[1]
+
+with open("dados.csv") as f:
+    leitor = csv.reader(f)
+    for linha in leitor:
+        if busca in linha:
+            print(linha)
+✅ No terminal:
+
+sh
+Copiar
+Editar
+python busca.py Jonathan
+📌 Isso exibe todas as linhas do dados.csv que contêm "Jonathan".
+
+🎨 5. Criar um Script Personalizado
+python
+Copiar
+Editar
+import sys
+
+if len(sys.argv) < 3:
+    print("Uso: python script.py nome cor")
+else:
+    nome = sys.argv[1]
+    cor = sys.argv[2]
+    print(f"{nome}, sua cor favorita é {cor}!")
+✅ No terminal:
+
+sh
+Copiar
+Editar
+python script.py Jonathan Azul
+🔹 Saída:
+
+Copiar
+Editar
+Jonathan, sua cor favorita é Azul!
+💡 Conclusão
+📌 sys.argv serve para criar scripts mais interativos, que aceitam dados direto do terminal.
+Isso evita que você precise modificar o código toda hora e ajuda a automatizar tarefas.
+
+Agora faz mais sentido? 🚀
