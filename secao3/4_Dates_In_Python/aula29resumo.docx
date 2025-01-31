@@ -1,0 +1,84 @@
+📝 Resumo da Aula
+Hoje você aprendeu sobre o módulo argparse, que serve para trabalhar com argumentos mais avançados na linha de comando. Ele é uma alternativa melhor ao sys.argv, pois permite configurar tipos, valores padrão, argumentos opcionais, obrigatórios e até exibir mensagens de ajuda.
+
+🔹 Explicação dos Componentes
+Criando o parser
+
+python
+Copiar
+Editar
+from argparse import ArgumentParser
+parser = ArgumentParser()
+Isso inicializa o argparse, permitindo adicionar argumentos.
+
+Adicionando um argumento simples (-b ou --basic)
+
+python
+Copiar
+Editar
+parser.add_argument(
+    '-b', '--basic',
+    help='Mostra "Olá mundo" na tela.',
+    metavar='STRING',  
+    action='append',  # Permite passar mais de um valor
+)
+🔹 -b ou --basic → Nome do argumento
+🔹 help → Mensagem de ajuda quando usa --help
+🔹 metavar='STRING' → Nome do valor exibido na ajuda
+🔹 action='append' → Permite passar múltiplos valores
+📌 Exemplo de uso:
+
+sh
+Copiar
+Editar
+python script.py -b "Olá" -b "Mundo"
+Saída: o valor de basic: ['Olá', 'Mundo']
+
+Adicionando uma flag (-v ou --verbose)
+
+python
+Copiar
+Editar
+parser.add_argument(
+    '-v', '--verbose',
+    help='Mostra logs',
+    action='store_true'  # Se estiver presente, retorna True
+)
+📌 Exemplo de uso:
+
+sh
+Copiar
+Editar
+python script.py -v
+Saída: True
+
+Executando o código
+
+python
+Copiar
+Editar
+args = parser.parse_args()
+print(args.basic)  # Mostra o valor de `-b`
+print(args.verbose)  # Mostra `True` ou `False`
+🎯 Desafio
+📌 Crie um script que funcione como uma calculadora usando argparse.
+🔹 O usuário deve passar dois números e um operador (+, -, *, /) pela linha de comando.
+🔹 O script deve realizar a operação e exibir o resultado.
+🔹 Se o usuário não passar argumentos suficientes, deve exibir uma mensagem de erro.
+
+Exemplo de uso:
+
+sh
+Copiar
+Editar
+python calculadora.py 10 5 +
+🔹 Saída: 10 + 5 = 15
+
+🔥 Bora resolver? 🚀
+
+
+
+
+
+
+
