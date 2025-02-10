@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LINKS E TAGS</title>
+    <style>
+      h1 {
+        background: red;
+      }
+      h2 {
+        background: green;
+      }
+      .img-in-txt {
+        width: 300px;
+        height: 300px;
+      }
+      .vermelho {
+        font-size: 38px;
+        color: red
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Cabeçalho</h1>
+    <h2>Cabeçalho</h2>
+    <p>
+      <b>Lorem</b> <strong>ipsum</strong> <i>sit amet</i> <em>consectetur</em>
+
+      <a href="https://www.facebook.com/elpidio.ribeiro.37" target="'_blank">
+        <img
+          class="img-in-txt"
+          src="https://www.shutterstock.com/image-photo/gir-gyr-one-principal-zebu-600nw-2364125405.jpg"
+          alt="Imagem de cavalos correndo sobre o por do sol"
+      /></a>
+      adi <del>vermelho</del> <ins>azul</ins>, <s>elit.</s> <u>Ut,</u>
+      <small>et accusantium atque </small> blanditiis 2<sup>2</sup> maiores
+      H<sub>2</sub>O officia eos odio iusto <br />consequuntur quam impedit?
+      Totam quia fugit illum? <div class="vermelho">Eu sou um bloco</div>Deleniti dicta totam quibusdam.
+    </p>
+
+    <hr />
+
+    <p>
+      <q cite="https://www.youtube.com/">citacao sobre o tema</q>
+      <span class="vermelho">Lorem</span> <code>console.log</code> ipsum dolor sit amet consectetur
+      adipisicing eit. Ut, rem et accusantium atque blanditiis maiores officia
+      eos odio <span class="vermelho">iusto consequuntur quam impedit? Totam quia fugit il</span>iusto consequuntur quam impedit? Totam quia fugit illum? Deleniti
+      dicta totam quibusdam.
+    </p>
+
+    <pre>
+      <code>
+  import calendar
+  # print(calendar.calendar(2025))  # calendario do ano todo
+  # print(calendar.month(2025, 1))  # mostra o mes de janeiro de 2025
+  # mostra o dia da semana do primeiro dia e o ultimo dia do mes
+  print(calendar.monthrange(2025, 2))
+  numero_primeiro_dia, ultimo_dia = (calendar.monthrange(2025, 2))
+  print(list(enumerate(calendar.day_name)))
+  # [(0, 'Monday'), (1, 'Tuesday'), (2, 'Wednesday'), (3, 'Thursday'),
+  # (4, 'Friday'), (5, 'Saturday'), (6, 'Sunday')]
+
+print(calendar.day_name[calendar.weekday(2025, 10, ultimo_dia)])
+
+# print(calendar.monthcalendar(2025, 12))
+
+for week in calendar.monthcalendar(2025, 12):
+    for day in week:
+        if day == 0:
+            continue  # tira os dias que n sao do proprio mes.
+        print(day)
+      </code>
+    </pre>
+    <div class="vermelho">Eu sou um bloco</div>
+    <blockquote cite="https://validator.w3.org/nu/#textarea">
+      <p>Aqui sim eu estou fazendo um bloco de citacao.</p>
+    </blockquote>
+  </body>
+</html>

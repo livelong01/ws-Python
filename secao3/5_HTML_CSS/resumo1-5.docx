@@ -1,0 +1,55 @@
+Aula 1 - Estrutura básica do HTML
+Introdução ao HTML e sua estrutura básica.
+Uso da tag <html> para definir o documento.
+<head> contém metadados como <meta charset="UTF-8"> para suporte a caracteres especiais.
+<title> define o nome da aba no navegador.
+<body> contém o conteúdo visível da página.
+
+Aula 2 - Elementos básicos de texto e espaçamentos
+Atalho "!" no VS Code para gerar a estrutura inicial.
+Tags de título (<h1> a <h6>) para definir hierarquia de textos.
+Parágrafos (<p>) para organizar blocos de texto.
+Tags de espaçamento como <br> (quebra de linha).
+<span> para estilizar partes específicas do texto.
+
+Aula 3 - Introdução ao CSS
+Uso da tag <style> para estilizar HTML.
+IDs (#id) e classes (.class) para aplicar estilos personalizados.
+Alteração de cores de fundo (background).
+Uso da propriedade color para alterar a cor do texto.
+Aplicação de estilos combinados em múltiplos elementos.
+
+Aula 4 - Estruturação do conteúdo com títulos
+Uso de títulos (<h1> a <h6>) para organizar o conteúdo.
+Hierarquia de títulos para melhor SEO e acessibilidade.
+Parágrafos (<p>) para criar blocos de texto organizados.
+
+Aula 5 - Links, imagens e formatação de texto
+
+Nesta aula, foram abordados diversos elementos do HTML e CSS, incluindo links, imagens, formatação de texto, blocos de código e citações.
+
+1. Cabeçalhos e Estilos CSS
+Tags <h1> e <h2> usadas para títulos com cores de fundo aplicadas via CSS.
+Classe .vermelho define um estilo para o texto com tamanho de 38px e cor vermelha.
+2. Formatação de Texto
+Negrito → <b> e <strong>.
+Itálico → <i> e <em>.
+Sublinhado → <u>.
+Texto riscado → <del> e <s>.
+Texto pequeno → <small>.
+Sobrescrito (2²) → <sup>.
+Subscrito (H₂O) → <sub>.
+3. Links e Imagens
+<a href="URL" target="_blank"> → Cria um link para outra página.
+<img src="URL" alt="descrição"> → Exibe imagens na página.
+A imagem dentro do link faz com que o clique na imagem leve a outro site.
+4. Citações e Blocos de Texto
+<q> → Citação curta.
+<blockquote> → Citação longa com referência (cite="URL").
+<hr> → Cria uma linha horizontal para separar conteúdos.
+<div class="vermelho"> → Define um bloco de conteúdo estilizado.
+5. Código e Pré-formatação
+<code> → Destaca trechos de código em linha.
+<pre> → Mantém a formatação original do código.
+Código Python adicionado para exemplificar o uso de calendar.
+Conclusão: A aula mostrou como estruturar conteúdos usando títulos, parágrafos, formatação de texto, links, imagens, blocos de código e citações. Isso é essencial para criar páginas bem organizadas e visualmente agradáveis. 🚀
