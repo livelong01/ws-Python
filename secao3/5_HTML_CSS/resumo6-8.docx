@@ -1,0 +1,20 @@
+Resumo das Aulas 6 e 7 de HTML e CSS
+Aula 6 - Estruturação de Conteúdo com HTML
+Introdução à estruturação de um documento HTML utilizando tags semânticas.
+Uso das tags <header>, <section>, <article>, <aside>, <nav> e <footer> para organizar melhor o conteúdo.
+Aplicação de listas (<ul>, <li>) dentro de <nav> para criar menus de navegação.
+Separação de conteúdos por categorias, como "Roupas Femininas" e "Roupas Masculinas".
+Implementação de elementos de cabeçalho (<h1>, <h2>, <h3>) para hierarquizar a informação.
+Uso da <div> para organizar e alinhar elementos.
+Inclusão de um rodapé (<footer>) com informações adicionais.
+Aula 7 - Introdução ao CSS e Estilização do Fundo
+Adição de estilos diretamente no HTML utilizando <style>.
+Reset de margens e preenchimentos (margin: 0; padding: 0;) para padronização.
+Aplicação de uma imagem de fundo com background-image, além de:
+background-size: cover; para ajuste ao tamanho da tela.
+background-position: top center; para centralizar a imagem.
+Estilização do cabeçalho com fundo semitransparente usando rgba(0, 0, 0, 0.7).
+Aplicação de display: flex e justify-content: space-between para organizar os elementos horizontalmente.
+Alteração da cor do texto e remoção do sublinhado nos links (text-decoration: none;).
+Comentários no código indicando experimentação com float para posicionamento de blocos coloridos.
+Essas aulas abordaram tanto a estruturação semântica do HTML quanto a introdução ao CSS, mostrando como organizar o conteúdo e aplicar estilos básicos.

@@ -1,0 +1,98 @@
+### **Resumo do que você aprendeu de novo nesta aula**
+
+Nesta aula, você aprofundou seus conhecimentos em **CSS**, focando em conceitos fundamentais como o **Box Model**, configuração de bordas, preenchimentos (padding) e margens (margin). Aqui estão os pontos novos que você aprendeu, explicados em detalhes:
+
+---
+
+### **1. Reset de Estilos do Navegador**
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+```
+- O navegador aplica um estilo padrão aos elementos. Para evitar inconsistências, é comum **resetar** esses estilos.
+- O `box-sizing: border-box;` faz com que o **padding** e a **borda** sejam incluídos na largura e altura do elemento, evitando problemas de dimensionamento.
+
+---
+
+### **2. Propriedades de `border` (Bordas)**
+Você aprendeu a **definir bordas de forma individual**, em vez de configurar tudo em um único `border`.
+
+```css
+border-width: 10px;
+border-bottom-width: 20px;
+border-bottom-color: firebrick;
+border-top-color: rgb(178, 173, 34);
+border-left-color: rgb(41, 34, 178);
+border-right-color: rgb(71, 226, 14);
+border-style: solid;
+```
+- **`border-width`**: Define a espessura da borda. Você pode ajustar a largura de cada lado separadamente.
+- **`border-color`**: Cada lado pode ter uma cor diferente.
+- **`border-style`**: Define o tipo da borda (exemplo: `solid`, `dashed`, `dotted`).
+
+#### **Exemplo Visual**
+📌 Se aplicarmos esse código, teríamos um elemento com uma borda:
+- **Inferior (bottom)**: Vermelho escuro (`firebrick`) e mais grossa (20px).
+- **Superior (top)**: Amarelo (`rgb(178, 173, 34)`).
+- **Esquerda (left)**: Azul (`rgb(41, 34, 178)`).
+- **Direita (right)**: Verde (`rgb(71, 226, 14)`).
+
+---
+
+### **3. Configuração de `padding` (Preenchimento Interno)**
+```css
+padding: 0 0 0 150px;
+```
+- O **`padding`** define o espaço interno entre o conteúdo do elemento e sua borda.
+- A ordem dos valores segue:
+  - **Topo**
+  - **Direita**
+  - **Baixo**
+  - **Esquerda**
+- Neste caso, só o **lado esquerdo** tem preenchimento de **150px**.
+
+Outras formas de escrever `padding`:
+```css
+padding: 15px; /* Todos os lados iguais */
+padding: 15px 0; /* (Cima/Baixo) (Esquerda/Direita) */
+padding: 15px 0 10px; /* (Topo) (Direita/Esquerda) (Baixo) */
+```
+---
+
+### **4. Configuração de `margin` (Margens Externas)**
+```css
+margin: 30px;
+```
+- A **margem** define o espaço externo ao redor do elemento.
+- Assim como o `padding`, pode ser configurada de várias formas:
+  ```css
+  margin: 30px 20px; /* (Cima/Baixo) (Esquerda/Direita) */
+  margin: 10px 5px 15px 20px; /* (Topo) (Direita) (Baixo) (Esquerda) */
+  ```
+- Se duas margens de elementos diferentes se encontram, a **maior** delas é aplicada (colapso de margens).
+
+---
+
+### **5. Background com `background-image` e `background-size`**
+```css
+background-image: url(https://onetreeplanted.org/cdn/shop/articles/nature_facts_1000x.jpg?v=1705008496);
+background-position: center center;
+background-size: cover;
+```
+- **`background-image`**: Define uma imagem de fundo.
+- **`background-position`**: Posiciona a imagem no **centro** do elemento.
+- **`background-size: cover;`**: Faz com que a imagem cubra toda a área do elemento, mantendo a proporção.
+
+---
+
+### **Conclusão**
+Nessa aula, você aprendeu **mais detalhes sobre o Box Model**, principalmente sobre:
+✅ Como **resetar os estilos padrão** do navegador.  
+✅ Como **configurar bordas individualmente** para cada lado.  
+✅ Como **controlar preenchimentos internos** (`padding`) e **margens externas** (`margin`).  
+✅ Como usar **imagens de fundo** com `background-image`, `background-position` e `background-size`.  
+
+Esses conceitos são essenciais para criar **layouts organizados e bem estruturados** no CSS. 🚀

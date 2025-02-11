@@ -1,0 +1,58 @@
+<!--https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css</title>
+    <style>
+      * {
+        /*Normalmente ele usa isso pra iniciar o style, pq zera a confg padrao do navegador*/
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .section-one {
+        background-color: deeppink;
+        background-image: url(https://onetreeplanted.org/cdn/shop/articles/nature_facts_1000x.jpg?v=1705008496);
+        background-position: center center;
+        background-size: cover;
+        width: 200px;
+        height: 150px;
+        /*border: 5px solid black;*/
+        /*VOCE PODE TRAB DE FORMA GERAL OU INDIVIDUALMENTE EM CADA DETALHE*/
+        border-width: 10px;
+        border-bottom-width: 20px;
+        border-bottom-color: firebrick;
+        border-top-color: rgb(178, 173, 34);
+        border-left-color: rgb(41, 34, 178);
+        border-right-color: rgb(71, 226, 14);
+        border-style: solid;
+        padding: 0 0 0 150px; /*TOP DIREITA BAIXO ESQUERDA (ORDEM)*/
+        /*padding: 15px*/
+        /*padding: 15px 0 (CIMA E BAIXO) ( DIREITA E ESQUERDA) */
+        /*padding: 15px 0 10px  (topo) (dir e esqu) (baixo)*/
+        color: #110132;
+        margin: 30px; /* a margem vc pode config da msm forma q o padding*/
+        /* A maior margem é usada como base, se houver um conflito*/
+      }
+      .section-two {
+        background: cyan;
+        width: 200px;
+        height: 50px;
+        border: 5px solid black;
+        padding: 15px;
+        color: #110132;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section-one">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel
+      debitis
+    </section>
+    <section class="section-two">2</section>
+  </body>
+</html>
