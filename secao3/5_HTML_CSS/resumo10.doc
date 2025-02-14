@@ -1,0 +1,121 @@
+### **Resumo detalhado do que foi aprendido de novo nesta aula**
+
+Nesta aula, você aprendeu novos conceitos relacionados a **CSS e estruturação de listas em HTML**. Os principais tópicos abordados foram:
+
+---
+
+## **1. Navegação com `<nav>` e Estilização com Flexbox**
+Você aprendeu a criar um menu de navegação estilizado com **Flexbox**, além de utilizar propriedades como `justify-content` e `align-items` para controlar o posicionamento dos itens.
+
+### 📌 **Exemplo e explicação:**
+```css
+nav {
+    background: red;
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+```
+- O **`display: flex;`** permite que os elementos dentro do `<nav>` fiquem organizados de forma mais flexível.
+- **`align-items: center;`** centraliza os itens **verticalmente**.
+- Poderia ser usado **`justify-content: center;`** para centralizar os itens **horizontalmente**.
+
+---
+
+## **2. Estilização de Links `<a>` dentro do Menu**
+Você aprendeu a definir estilos para links dentro da barra de navegação, personalizando cor, espaçamento e transformações de texto.
+
+### 📌 **Exemplo e explicação:**
+```css
+nav ul li a {
+    color: #fff; /* Cor branca */
+    text-decoration: none; /* Remove o sublinhado */
+    font-family: system-ui, sans-serif; /* Define a fonte */
+    padding: 20px;
+    display: block; /* Faz o link ocupar toda a área do elemento pai */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+}
+```
+- **`text-decoration: none;`** remove o sublinhado padrão dos links.
+- **`display: block;`** faz com que o link ocupe toda a área do `<li>`, melhorando a área clicável.
+- **`text-transform: uppercase;`** faz com que todo o texto fique em letras maiúsculas.
+
+---
+
+## **3. Efeito Hover no Link**
+O `:hover` permite alterar o estilo do elemento quando o usuário passa o mouse sobre ele.
+
+### 📌 **Exemplo e explicação:**
+```css
+nav a:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+```
+- O fundo do link escurece quando o mouse passa sobre ele.
+- `rgba(0, 0, 0, 0.3)` define uma cor preta com **30% de opacidade**, criando um efeito suave.
+
+---
+
+## **4. Uso de `display: flex;` para Organizar Itens em Linha**
+Você aprendeu a utilizar **Flexbox** para alinhar os elementos do menu horizontalmente.
+
+### 📌 **Exemplo e explicação:**
+```css
+nav ul {
+    display: flex; /* Coloca os itens lado a lado (row) */
+    list-style-type: none; /* Remove os marcadores da lista */
+}
+```
+- **`display: flex;`** alinha os itens **horizontalmente** por padrão.
+- **`list-style-type: none;`** remove os **pontos/prefixos** das listas (`•`).
+
+---
+
+## **5. Diferentes Tipos de Listas em HTML**
+Você aprendeu sobre três tipos de listas e suas variações:
+
+### 📌 **Listas Não Ordenadas (`<ul>`)**
+```html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+- Criam uma lista **sem ordem específica**, marcada com **pontos** (`•` por padrão).
+
+---
+
+### 📌 **Listas Ordenadas (`<ol>`)**
+```html
+<ol type="I" start="5">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ol>
+```
+- **`type="I"`** muda o estilo da numeração (1, I, i, A, a).
+- **`start="5"`** faz a contagem começar do número **5**.
+
+---
+
+### 📌 **Lista de Definição (`<dl>`)**
+```html
+<dl>
+  <dt>Café</dt>
+  <dd>Bebida escura quente</dd>
+  <dt>Mousse de Maracujá</dt>
+  <dd>Sobremesa doce usando maracujá amarelo</dd>
+</dl>
+```
+- O `<dt>` representa o **termo**.
+- O `<dd>` representa a **descrição** do termo.
+
+---
+
+## **Conclusão**
+📌 O que você aprendeu de novo:
+✅ **Uso do `display: flex;` para alinhar menus de navegação.**  
+✅ **Estilização avançada de links (`<a>`) com `hover`, cores e espaçamento.**  
+✅ **Uso de listas ordenadas (`<ol>`), não ordenadas (`<ul>`) e listas de definição (`<dl>`).**  
+✅ **Controle de layout com `align-items` e `justify-content` no Flexbox.**  
+
+Esses conceitos são fundamentais para criar menus e listas organizadas em qualquer site! 🚀
