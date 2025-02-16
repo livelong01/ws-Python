@@ -1,0 +1,87 @@
+https://chatgpt.com/canvas/shared/67af44be46f481919c08efd33fb28047
+
+**Resumo da Aula 11: Tabelas no HTML e CSS**
+
+Nesta aula, você aprendeu sobre a estruturação de tabelas no HTML e como estilizar essas tabelas com CSS. A seguir, destacamos os conceitos novos e seus usos, com exemplos detalhados.
+
+### **1. Novos Conceitos Apresentados**
+
+#### **1.1. A Tag `<caption>`**
+- A tag `<caption>` é usada para fornecer uma legenda descritiva para a tabela.
+- O CSS permite personalizar a posição e o estilo dessa legenda.
+- No exemplo:
+  ```css
+  table caption {
+      caption-side: bottom; /* Coloca a legenda abaixo da tabela */
+      text-align: right; /* Alinha o texto à direita */
+      font-style: italic;
+      font-size: 14px;
+      margin: 5px 0;
+  }
+  ```
+  - A legenda ficará na parte inferior da tabela, alinhada à direita e em itálico.
+
+#### **1.2. A Propriedade `border-collapse`**
+- `border-collapse: collapse;` é usada para unir os bordas das células da tabela.
+- Sem essa propriedade, cada célula tem uma borda individual, resultando em um espaço visível entre elas.
+- Exemplo:
+  ```css
+  table {
+      border-collapse: collapse; /* Une as bordas das células */
+      width: 800px;
+  }
+  ```
+
+#### **1.3. O Elemento `<tfoot>`**
+- A tag `<tfoot>` é usada para definir uma seção de rodapé da tabela.
+- Normalmente, contém resumos ou totais.
+- No exemplo:
+  ```html
+  <tfoot>
+      <tr>
+          <td colspan="2" rowspan="2"></td>
+          <td>TOTAL:</td>
+      </tr>
+      <tr>
+          <td>R$ 555</td>
+      </tr>
+  </tfoot>
+  ```
+  - O primeiro `<tr>` usa `colspan="2"` e `rowspan="2"` para mesclar células.
+  - A segunda linha contém um valor total, que aparece abaixo da palavra "TOTAL".
+
+#### **1.4. Uso de `colspan` e `rowspan`**
+- `colspan` permite que uma célula ocupe várias colunas.
+- `rowspan` permite que uma célula ocupe várias linhas.
+- Exemplo de `colspan`:
+  ```html
+  <td colspan="2">Aqui</td>
+  ```
+  - Essa célula ocupará duas colunas em vez de apenas uma.
+- Exemplo de `rowspan`:
+  ```html
+  <td rowspan="2">Dado importante</td>
+  ```
+  - Essa célula ocupará duas linhas consecutivas.
+
+#### **1.5. Criando uma Tabela Responsiva**
+- Para evitar que tabelas largas causem problemas na exibição de páginas pequenas, você pode criar um container `div` com `overflow-x: auto`.
+- Exemplo:
+  ```css
+  .responsive-table {
+      max-width: 100%;
+      overflow-x: auto;
+  }
+  ```
+  - Isso permite que a tabela tenha um **scroll horizontal** sem afetar o restante do site.
+
+### **2. Resumo Geral**
+Nesta aula, você aprendeu:
+- Como usar `<caption>` para adicionar legendas às tabelas.
+- Como aplicar `border-collapse` para unir as bordas das células.
+- Como usar `<tfoot>` para rodapés de tabelas, geralmente para totais.
+- Como aplicar `colspan` e `rowspan` para mesclar células.
+- Como criar tabelas responsivas usando `overflow-x: auto`.
+
+Esses conceitos são fundamentais para criar tabelas bem estruturadas e visualmente organizadas em páginas da web. Praticar esses elementos ajudará no domínio do design de tabelas em HTML e CSS.
+

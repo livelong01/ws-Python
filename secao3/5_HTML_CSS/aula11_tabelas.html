@@ -1,0 +1,89 @@
+<!-- LINK DO RESUMO DA AULA
+https://chatgpt.com/canvas/shared/67af44be46f481919c08efd33fb28047-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabelas</title>
+    <style>
+    
+      table caption {
+        caption-side: bottom;
+        text-align: right;
+        font-style: italic;
+        font-size: 14px;
+        margin: 5px 0;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      table {
+        border-collapse: collapse; /*cola as colunas e linhas uma nas outras*/
+        width: 800px;
+      }
+      table td,
+      table th {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: left;
+      }
+
+      tfoot td, table th{
+        background: #ddd;
+      }
+
+      tfoot td{
+        font-style: italic;
+      }
+    .responsive-table{ /* Ele cria um scrol apenas para a tabela, o site fica fixo.*/
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    </style>
+  </head>
+  <body>
+    <p>Lorem ipsum dolor sit.</p>
+    <div class="responsive-table">
+    <table>
+      <caption>
+        Uma descricao da tabela
+      </caption>
+      <thead>
+        <tr>
+          <!--linhas (tr)-->
+          <th>Título 1</th>
+          <!--colunas (th)-->
+          <th>Título 2</th>
+          <th>Título 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Corpo 1Corpo 1Corpo 1Corpo 1Corpo 1Corpo 1Corpo 1Corpo 1</td><!--colunas no tbody (td)-->
+          <td>Corpo 1</td>
+          <td>Corpo 1</td>
+        </tr>
+        <tr>
+          <td colspan="2">Aqui</td> <!--colspan pode aumentar a dimensao da linha para ocupar mais-->
+          <td>Corpo 2</td>
+        </tr>
+        <tr>
+          <td>Corpo 3</td>
+          <td>Corpo 3</td>
+          <td>Corpo 3</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr> <!--Normalmente usado para fazer o total.-->
+            <td colspan="2" rowspan="2"></td>
+            <td>TOTAL:</td>
+        </tr>
+        <tr> <!--Normalmente usado para fazer o total.-->
+            <td>R$ 555</td>
+        </tr>
+      </tfoot>
+    </div>
+    </table>
+  </body>
+</html>
