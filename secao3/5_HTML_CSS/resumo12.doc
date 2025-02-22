@@ -1,0 +1,131 @@
+Resumo da Aula 12 - Formulários em HTML
+
+Nesta aula, aprendi novos elementos e atributos do HTML para formulários. Aqui estão os principais conceitos novos com explicações detalhadas e exemplos:
+
+1. O Elemento <form> e Seus Atributos
+
+O <form> é o contêiner principal para formulários em HTML. Nesta aula, explorei alguns novos atributos:
+
+action="#" -> Define o destino para onde os dados serão enviados.
+
+method="get" -> Envia os dados via URL (padrão, mais seguro usar POST para senhas/dados sensíveis).
+
+target="_blank" -> Abre o resultado em uma nova aba.
+
+autocomplete="off" -> Desativa a sugestão automática do navegador.
+
+Exemplo:
+
+<form action="#" method="get" target="_blank" autocomplete="off">
+
+2. Novos Tipos de <input>
+
+Os inputs permitem entrada de dados do usuário. Nesta aula, explorei novos tipos:
+
+a) Checkbox (type="checkbox")
+
+Permite seleção múltipla. Se checked, ele já aparece marcado.
+
+<input type="checkbox" id="dev1" name="dev1" value="sim" checked>
+
+b) Radio (type="radio")
+
+Usado para selecionar apenas uma opção dentro de um grupo. Todos os radio buttons dentro de um mesmo grupo devem ter o mesmo name.
+
+<input type="radio" id="feminino" name="genero" value="feminino" checked>
+<input type="radio" id="masculino" name="genero" value="masculino">
+
+c) Datas e Horários
+
+type="date" -> Seleciona uma data no formato AAAA-MM-DD.
+
+type="datetime-local" -> Permite escolher data e horário juntos.
+
+type="time" -> Apenas horário no formato HH:MM:SS.
+
+<input type="date" id="date" name="date" value="2024-02-18">
+<input type="datetime-local" id="datetime" name="datetime" value="2024-02-18T14:30">
+<input type="time" id="time" name="time" value="14:30:00">
+
+d) Cores (type="color")
+
+Abre um seletor de cores.
+
+<input type="color" id="color" name="color" value="#FF0000">
+
+e) Arquivos (type="file")
+
+Permite upload de arquivos. multiple permite selecionar mais de um arquivo.
+
+<input type="file" id="file" name="file" accept=".jpg,image/*" multiple>
+
+f) Números (type="number")
+
+Define um campo numérico com valores mínimo (min), máximo (max) e incremento (step).
+
+<input type="number" id="number" name="number" min="10" max="100" step="5">
+
+g) Senha (type="password")
+
+Campo oculto para digitar senhas.
+
+<input type="password" id="password" name="password">
+
+h) Controle de Volume (type="range")
+
+Barra deslizante com valores variáveis.
+
+<input type="range" id="range" name="range">
+
+3. Outros Campos e Elementos
+
+a) URL (type="url")
+
+Valida automaticamente URLs inseridas.
+
+<input type="url" id="url" name="url">
+
+b) Campo de Busca (type="search")
+
+Campo para pesquisas.
+
+<input type="search" id="search" name="search">
+
+c) Select e Optgroup
+
+Os select criam listas suspensas.
+
+optgroup agrupa opções dentro do select.
+
+selected define uma opção padrão.
+
+disabled impede a seleção de uma opção.
+
+<select name="select" id="select">
+  <optgroup label="Grupo 1">
+    <option value="1">Opção 1</option>
+    <option value="2" disabled>Opção 2</option>
+    <option value="3" selected>Opção 3</option>
+  </optgroup>
+</select>
+
+d) Textarea
+
+Permite entradas de múltiplas linhas.
+
+<textarea name="textarea" id="textarea" rows="3" cols="9">Texto aqui...</textarea>
+
+4. Botões (<button>)
+
+Botões são usados para interação do usuário:
+
+type="submit" -> Envia o formulário.
+
+type="reset" -> Limpa os campos.
+
+<button type="submit">Enviar</button>
+<button type="reset">Reset</button>
+
+Conclusão
+
+Nesta aula, aprendi sobre vários novos elementos de formulário em HTML, incluindo tipos avançados de <input>, seletores (select e optgroup), textarea e botões. Essas ferramentas são essenciais para criar formulários interativos e acessíveis na web.
