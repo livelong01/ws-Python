@@ -1,0 +1,30 @@
+* { /* zerar o css*/
+    margin: 0;
+    padding: 0;
+} 
+.pai .um+.dois {
+    color: rgb(157, 9, 71)
+}
+/* [meu-atributo~="valor3"] {
+    color: red;
+} Seleciona se o atributo tiver ao menos o valor3*/ 
+
+[checked] {
+    width: 50px;
+    height: 50px;
+}
+[meu-atributo|="valor"] {
+    color: red;
+} /*seleciona a palavra entre aspas que estiver seguida por um traço, ex: valor-a */
+
+[meu-atributo1^="c"] {
+    color: rgb(7, 233, 169);
+} /*Quando usa o ^ ele seleciona o valor que começar com a palavra q tiver dentro das aspas, pode ser ate 1 letra.*/
+
+[meu-atributo2$="m"] {
+    color: rgb(10, 31, 127);
+} /*qd usar o $ ele seleciona o valor do atrib q termina com a letra ou palavra desejada*/
+
+[meu-atributo3*="m isso"] {
+    color: rgb(214, 57, 4);
+} /* qd usar o * , seleciona o valor do atrib q conter o valor selecionado, pode ser uma letra.

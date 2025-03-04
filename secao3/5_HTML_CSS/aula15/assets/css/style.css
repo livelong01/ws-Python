@@ -1,0 +1,34 @@
+* { /* zerar o css*/
+    margin: 0;
+    padding: 0;
+} 
+
+.pai h1+p {
+ color: red;
+} /* adjacent siibilling selector - seleciona o proximo p, dps do h1 */
+
+/* .pai p+h1 {
+    color: rgb(246, 255, 0);
+   } */
+
+   /* general sibilling selector */
+
+.pai h1~p {
+    color: blue
+} /* Seleciona TODOS os p´s apos o h1. */
+
+/* .pai .um~.dois {
+    color: rgb(157, 9, 71)
+} */
+
+.pai .um+.dois {
+    color: rgb(157, 9, 71)
+}
+[meu-atributo="valor"] {
+    color: red;
+} /* vc pode criar atributos e dentro deles valores, para ser mais especifico e poder selecionar apenas o q vc quiser."*/
+
+[checked] {
+    width: 50px;
+    height: 50px;
+}

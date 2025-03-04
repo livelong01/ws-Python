@@ -1,0 +1,110 @@
+### Resumo da Aula 14 - CSS Separado do HTML
+
+Nesta aula, aprendemos sobre **seletores avançados do CSS**, focando nos seletores de irmãos (*sibling selectors*), seletores de atributos e como podemos estilizar elementos específicos sem precisar adicionar classes extras.
+
+---
+
+### 🔹 **1. Resetando o CSS**
+No início, usamos:
+```css
+* {
+    margin: 0;
+    padding: 0;
+}
+```
+Isso remove os espaçamentos padrão do navegador em todos os elementos da página, garantindo mais controle sobre o layout.
+
+---
+
+### 🔹 **2. Seletores de Irmãos (Sibling Selectors)**
+
+Os seletores de irmãos permitem estilizar elementos que compartilham um mesmo "pai" (*parent*). Vimos dois tipos principais:
+
+#### **2.1. Adjacent Sibling Selector (`+`)**
+Seleciona **apenas** o elemento imediatamente seguinte.
+
+```css
+.pai h1 + p {
+    color: red;
+}
+```
+📌 **Explicação**: Aqui, apenas o primeiro `<p>` logo após um `<h1>` dentro do `.pai` será vermelho. Se houver vários `<p>`, apenas o primeiro que vem logo após um `<h1>` será afetado.
+
+---
+
+#### **2.2. General Sibling Selector (`~`)**
+Seleciona **todos** os elementos irmãos que vêm depois.
+
+```css
+.pai h1 ~ p {
+    color: blue;
+}
+```
+📌 **Explicação**: Aqui, **todos os `<p>` após um `<h1>` dentro da `.pai` ficarão azuis**, independente se estão imediatamente após o `<h1>` ou não.
+
+---
+
+### 🔹 **3. Selecionando elementos com classes específicas**
+
+Outro exemplo foi a aplicação do seletor de irmãos em classes específicas:
+
+```css
+.pai .um + .dois {
+    color: rgb(157, 9, 71);
+}
+```
+📌 **Explicação**: O primeiro `.dois` que vem imediatamente depois de um `.um` dentro de `.pai` terá a cor alterada.
+
+Se quiséssemos afetar **todos** os `.dois` que vêm depois de um `.um`, usaríamos `~` ao invés de `+`:
+```css
+.pai .um ~ .dois {
+    color: rgb(157, 9, 71);
+}
+```
+
+---
+
+### 🔹 **4. Seletores de Atributo**
+Além das classes e IDs, também podemos selecionar elementos com atributos específicos.
+
+#### **4.1. Selecionando elementos com um atributo específico**
+```css
+[meu-atributo="valor"] {
+    color: red;
+}
+```
+📌 **Explicação**: Qualquer elemento que tenha o atributo `meu-atributo="valor"` receberá a cor vermelha. No nosso HTML, isso se aplica a:
+```html
+<h1 class="heading" meu-atributo="valor">lorem</h1>
+```
+
+---
+
+### 🔹 **5. Estilizando Inputs com Atributos**
+Podemos estilizar elementos de formulário com base nos seus atributos.
+
+```css
+[checked] {
+    width: 50px;
+    height: 50px;
+}
+```
+📌 **Explicação**: Isso aumenta o tamanho de qualquer `<input>` que tenha o atributo `checked`, como no nosso HTML:
+
+```html
+<input type="checkbox" checked>
+```
+Somente os checkboxes marcados (`checked`) serão afetados.
+
+---
+
+## 🚀 **Resumo Final**
+Nesta aula, você aprendeu:
+✅ Resetar estilos padrão do navegador.  
+✅ Usar **seletores de irmãos** (`+` para o próximo e `~` para todos os seguintes).  
+✅ Selecionar elementos com **atributos personalizados**.  
+✅ Estilizar inputs com base em seus atributos (`[checked]`).  
+
+Esses conceitos ajudam a criar estilos mais organizados e flexíveis, sem precisar adicionar muitas classes extras no HTML.
+
+Se precisar de mais detalhes ou exemplos, só avisar! 😃

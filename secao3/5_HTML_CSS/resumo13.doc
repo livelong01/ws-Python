@@ -1,0 +1,125 @@
+# Resumo da Aula 13 - Separando CSS do HTML
+
+Nesta aula, aprendemos a separar o CSS do HTML e aplicar estilos de forma mais organizada utilizando classes, seletores e herança. Vamos revisar os principais conceitos abordados:
+
+## 1. Zerando o CSS (Reset CSS)
+O código abaixo é utilizado para remover as margens e os preenchimentos padrão dos elementos:
+```css
+* {
+    margin: 0;
+    padding: 0;
+}
+```
+Isso garante um ponto de partida mais consistente para o design da página.
+
+---
+## 2. Aplicando Classes e Estilos
+### **Uso de classes para estilizar elementos específicos**
+No HTML, aplicamos classes para estilizar elementos de maneira seletiva. Por exemplo:
+```html
+<h1 class="color-blueviolet">Lorem ipsum</h1>
+<p class="color-blueviolet">Texto estilizado</p>
+```
+No CSS, aplicamos a classe `color-blueviolet` para mudar a cor:
+```css
+.color-blueviolet {
+    color: blueviolet;
+}
+```
+Isso permite reutilizar o mesmo estilo em vários elementos.
+
+---
+## 3. Especificidade e Prioridade dos Seletores
+### **Seletores mais específicos têm prioridade sobre os genéricos.**
+Por exemplo:
+```css
+p, h1 {
+    color: purple;
+}
+
+body div section p,
+body div section h1 {
+    color: red;
+}
+```
+Aqui, os `<h1>` e `<p>` dentro de `<section>` serão vermelhos porque a segunda regra é mais específica.
+
+Outro exemplo de seletor mais específico:
+```css
+body div.main-content h2.heading {
+    font-style: italic;
+    color: red;
+}
+```
+Neste caso, apenas `<h2 class="heading">` dentro de `div.main-content` terá o estilo aplicado.
+
+---
+## 4. Herança e `initial` vs. `inherit`
+A herança ocorre quando um elemento filho recebe automaticamente a cor do elemento pai:
+```css
+.pai {
+    color: aqua;
+}
+```
+Se quisermos que um elemento ignore a cor herdada, usamos:
+```css
+div {
+    color: initial;
+}
+```
+Já se quisermos forçar um elemento a herdar a cor do pai, usamos:
+```css
+div {
+    color: inherit;
+}
+```
+
+---
+## 5. Seletores Avançados
+### **Filhos diretos (`>`)**
+Seleciona apenas os filhos diretos de um elemento:
+```css
+.pai > .filha {
+    color: coral;
+}
+```
+Isso significa que apenas os elementos `.filha` que estão **diretamente dentro** de `.pai` terão a cor alterada.
+
+### **Descendentes (`espaço` entre seletores)**
+Seleciona todos os elementos descendentes de um determinado pai:
+```css
+.pai .filha {
+    color: coral;
+}
+```
+Aqui, **todas** as `.filha` dentro de `.pai` terão a cor aplicada, independentemente do nível de aninhamento.
+
+### **Seletores Combinados (`.` sem espaço)**
+Seleciona elementos que possuem **ambas** as classes simultaneamente:
+```css
+.pai.filha {
+    color: coral;
+}
+```
+Isso significa que um elemento precisa ter **as duas classes ao mesmo tempo** para receber o estilo.
+
+### **Selecionando elementos aninhados específicos**
+```css
+.pai > span > .filha > .filha {
+    color: rgb(10, 158, 99);
+}
+```
+Neste caso, apenas a **filha da filha** dentro de `span` será afetada.
+
+---
+## Conclusão
+Nesta aula, aprendemos:
+✅ Como separar o CSS do HTML.
+✅ A importância do reset CSS.
+✅ Como utilizar classes para estilização.
+✅ Como funciona a especificidade e prioridade dos seletores.
+✅ A diferença entre `inherit` e `initial`.
+✅ Como usar seletores avançados para selecionar elementos com mais precisão.
+
+Essa base é essencial para criar layouts mais organizados e escaláveis! 🎨💻
+
