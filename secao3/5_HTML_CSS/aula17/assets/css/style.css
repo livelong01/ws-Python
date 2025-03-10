@@ -1,0 +1,64 @@
+.heading {
+    transition: all 300ms ease-in-out;
+}
+.heading:hover {
+    background-color: red	;
+}
+
+a {
+    color: darkorange;
+
+}
+
+a:link { 
+    color:deeppink;
+ } /*links nao visitados tem essa cor */
+
+a:visited {
+    color:rgb(86, 152, 79);
+} /*links visitados tem essa cor */
+
+a:hover {
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+} /*muda a cor ao passar em cima o mouse */
+
+a:active {
+    background-color: rgb(66, 122, 241);
+    color: white;
+    text-decoration: none;
+} /*ao clicar e segurar ele muda de cor o fundo. */
+
+/* input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: 1px solid black;
+}
+input:disabled {
+    background: rgb(42, 41, 41);
+    cursor:not-allowed;
+}
+
+input:enabled {
+    background: rgb(197, 44, 44);
+    cursor:not-allowed;
+} */
+
+input:checked + p {
+    background: red;
+} /* vc muda a cor do paragrafo abaixo, qd o input for checado!*/
+
+.pai .lista li:first-child {
+    background: red;
+}
+/* seleciona so o primeiro da lista. */
+
+.pai .lista li:last-child {
+    background: red;
+}
+/* seleciona so o ultimo da lista. */
+
+input:required {
+    background: blue;
+}
