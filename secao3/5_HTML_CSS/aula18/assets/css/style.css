@@ -1,0 +1,11 @@
+p:not(.meio) {
+    color: blue;
+} /* se o p tiver a classe meio, n fica azul */
+
+input:not(:checked) + p {
+    background: red;
+} /* se o input n tiver checked o prox p fica vermelho */
+
+input + p {
+    background: rgb(3, 245, 59);
+}
