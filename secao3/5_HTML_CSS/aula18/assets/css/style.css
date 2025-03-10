@@ -1,11 +1,26 @@
-p:not(.meio) {
-    color: blue;
-} /* se o p tiver a classe meio, n fica azul */
-
-input:not(:checked) + p {
+ul li:nth-child(odd) {
+    background: rgb(16, 205, 44);
+}
+ul li:nth-child(even) {
     background: red;
-} /* se o input n tiver checked o prox p fica vermelho */
+}
+/* seleciona os pares com a cor red. */
+ul li:nth-child(3) {
+    background: red;
+} 
+/* seleciona o terceiro item com a cor red. */
+ul li:nth-child(3n) {
+    background: rgba(3, 74, 95, 0.574);
+}
+/* seleciona de 3 em 3 item com a cor azul. */
+ul li:nth-child(3n+5) {
+    background: rgb(205, 6, 216);
+}
+/* começando do quinto item, vai de 3 em 3. */
 
-input + p {
-    background: rgb(3, 245, 59);
+p:nth-child(3n+6) {
+    background-color: darkturquoise;
+}
+p:nth-child(odd) {
+    background-color: rgb(5, 83, 23);
 }
