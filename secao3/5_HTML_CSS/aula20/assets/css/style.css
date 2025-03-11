@@ -1,0 +1,51 @@
+/* RANKING DE PRIORIDADE (ESPECIFICIDADE) 
+1- ID
+2- CLASSES, ATRIBUTOS, PSEUDO-CLASSES
+3- ELEMENTOS /PSEUDO-ELEMENTOS
+
+id classe elementos
+id = (1 , 0 , 0)  (passar mouse por cima) ou 100! 
+classe = (0 , 1 , 0) apenas 10 !
+elementos = (0 , 0 , 1) menos prioridade, apenas 1! 
+
+##raramente se usa, mas tem a tag !important, que da prioridade maior de todas.
+passa inclusive a classe style direto no html!
+PS: usar o !important apenas como ultimo recurso.
+*/
+
+#p {
+    background: red ;
+}
+/* (1,0,0) */
+
+.p {
+    background: blue !important;
+}
+/* (0,1,0) */
+p {
+    background: green;
+}
+/* (0,0,1) */
+
+/* para atingir novas pontuacoes, basta ser mais especifico */
+
+#p.p{
+    background: yellow;
+} /* (1,1,0) 110 pts! */
+
+p#p {
+    background: darkcyan;
+}  /* (1,0,1) 101 pts, nao tem mais prioridade(especifica) q a anterior */
+
+/* posso passar esse se usar as tres especificidade ou usar duas de uma mesma. ex: */
+
+p#p.p {
+    background: rgb(66, 2, 85);
+    color: white;
+}   /* (1,1,1)  111 pts! */
+
+body#b p#p.p::selection:hover{
+    background: rgb(7, 1, 9);
+    color: white;
+}   /* (2,1,1)  211 pts! tem DOIS ids. */
+
