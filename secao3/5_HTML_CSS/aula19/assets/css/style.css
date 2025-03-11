@@ -1,0 +1,29 @@
+/* ul li::after {
+    content: ' - ';
+    background: red;
+    color: white;
+    display: block;
+} */
+ul li::before {
+    content: ' - ';
+    background: rgb(23, 19, 48);
+    color: white;
+    display: block;
+ } 
+p::first-letter {
+    font-size: 150px;
+    display:block;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+p::first-line {
+    background-color: red;
+}
+p::selection {
+    background-color:black;
+    color: white;
+}
+.form-field::placeholder {
+ color:rgb(227, 95, 13);
+} 
+/* colore o placeholder dentro do input de texto  */

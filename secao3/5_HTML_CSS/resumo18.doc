@@ -1,0 +1,78 @@
+**Resumo da Aula 18 - Seletores Avançados com nth-child**
+
+Nesta aula, aprendemos a utilizar seletores CSS mais avançados para estilizar elementos de forma precisa usando `nth-child()`. Esse seletor permite aplicar estilos a elementos com base na sua posição dentro do contêiner pai.
+
+---
+
+### **1. Selecionando Elementos Pares e Ímpares**
+Podemos usar `nth-child(odd)` e `nth-child(even)` para selecionar elementos alternadamente.
+
+```css
+ul li:nth-child(odd) {
+    background: rgb(16, 205, 44);
+}
+/* Aplica um fundo verde a todos os itens ímpares da lista */
+
+ul li:nth-child(even) {
+    background: red;
+}
+/* Aplica um fundo vermelho a todos os itens pares da lista */
+```
+
+---
+
+### **2. Selecionando um Elemento Específico**
+Podemos estilizar um elemento específico com base em sua posição exata.
+
+```css
+ul li:nth-child(3) {
+    background: red;
+}
+/* Aplica um fundo vermelho apenas ao terceiro item da lista */
+```
+
+---
+
+### **3. Selecionando de N em N Elementos**
+Utilizando `nth-child(n)`, podemos criar padrões de seleção dinâmicos.
+
+```css
+ul li:nth-child(3n) {
+    background: rgba(3, 74, 95, 0.574);
+}
+/* Seleciona todos os elementos que estão em posições múltiplas de 3 (3, 6, 9...) e aplica um fundo azul */
+```
+
+```css
+ul li:nth-child(3n+5) {
+    background: rgb(205, 6, 216);
+}
+/* Começando do quinto item, aplica um fundo roxo em todos os elementos de 3 em 3 (5, 8, 11...) */
+```
+
+---
+
+### **4. Aplicando nth-child() a Parágrafos**
+Os seletores `nth-child()` também podem ser usados para estilizar outros elementos, como parágrafos.
+
+```css
+p:nth-child(3n+6) {
+    background-color: darkturquoise;
+}
+/* A cada 3 elementos, começando do sexto, aplica um fundo azul-turquesa */
+```
+
+```css
+p:nth-child(odd) {
+    background-color: rgb(5, 83, 23);
+}
+/* Aplica um fundo verde aos parágrafos ímpares */
+```
+
+---
+
+### **Conclusão**
+O `nth-child()` é um poderoso seletor CSS que permite aplicar estilos baseados na posição dos elementos dentro de um contêiner pai. Isso é muito útil para estilizar listas, tabelas e outros conjuntos de elementos sem precisar adicionar classes manualmente a cada um deles.
+
+Essa aula nos ajudou a melhorar o controle sobre a estilização dinâmica de elementos, tornando o CSS mais eficiente e organizado!
+

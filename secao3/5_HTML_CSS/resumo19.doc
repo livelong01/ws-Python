@@ -1,0 +1,76 @@
+**Resumo da Aula 19 - CSS**
+
+Nesta aula, aprendemos sobre **pseudo-elementos** em CSS, que nos permitem estilizar partes específicas de elementos HTML. Abaixo, uma explicação detalhada de cada conceito abordado:
+
+### **Pseudo-elementos em CSS**
+Os pseudo-elementos são utilizados para aplicar estilos em partes específicas de um elemento, como a primeira letra de um parágrafo, a primeira linha de um texto ou o conteúdo antes e depois de um elemento.
+
+#### **1. `::before` e `::after`**
+Esses pseudo-elementos permitem adicionar conteúdo antes (`::before`) ou depois (`::after`) de um elemento, sem precisar modificar o HTML.
+
+Exemplo:
+```css
+ul li::before {
+    content: ' - ';
+    background: rgb(23, 19, 48);
+    color: white;
+    display: block;
+}
+```
+Neste exemplo, um hífen `-` é adicionado antes de cada item `<li>` da lista `<ul>`, com um fundo azul escuro e texto branco.
+
+#### **2. `::first-letter`**
+Permite estilizar apenas a primeira letra de um elemento de texto.
+
+Exemplo:
+```css
+p::first-letter {
+    font-size: 150px;
+    display: block;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+```
+Aqui, a primeira letra do `<p>` é aumentada para 150px, deslocada para a esquerda (`float: left;`), e tem uma margem aplicada ao redor para melhorar a formatação.
+
+#### **3. `::first-line`**
+Aplica estilos apenas à primeira linha de um parágrafo.
+
+Exemplo:
+```css
+p::first-line {
+    background-color: red;
+}
+```
+Com isso, a primeira linha do parágrafo ficará com fundo vermelho.
+
+#### **4. `::selection`**
+Controla a aparência do texto quando ele é selecionado pelo usuário.
+
+Exemplo:
+```css
+p::selection {
+    background-color: black;
+    color: white;
+}
+```
+Ao selecionar o texto do parágrafo `<p>`, o fundo ficará preto e o texto branco.
+
+### **Personalizando o `placeholder` de Inputs**
+O `::placeholder` permite alterar a aparência do texto exibido dentro de campos de entrada (`input`) antes do usuário digitar algo.
+
+Exemplo:
+```css
+.form-field::placeholder {
+    color: rgb(227, 95, 13);
+}
+```
+Isso define a cor do `placeholder` dentro de inputs da classe `.form-field` para um tom de laranja.
+
+---
+
+### **Conclusão**
+A aula abordou como os pseudo-elementos podem ser usados para melhorar a experiência visual de um site sem modificar o HTML. Aprendemos como personalizar marcadores em listas, destacar a primeira letra e linha de textos, alterar a aparência do texto selecionado pelo usuário e estilizar placeholders de formulários.
+
+Essas técnicas são úteis para criar layouts mais sofisticados e interativos de forma eficiente com CSS.
+

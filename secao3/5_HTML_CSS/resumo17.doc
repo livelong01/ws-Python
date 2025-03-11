@@ -1,0 +1,102 @@
+### 📌 **Resumo da Aula 17 - CSS Separado do HTML**
+
+Nesta aula, você aprendeu sobre **pseudoclasses**, **transições CSS** e como manipular a aparência de **inputs, links e listas** com CSS avançado.
+
+---
+
+## 💡 **1. Pseudoclasses para Links**
+As pseudoclasses permitem estilizar os links em diferentes estados.
+
+```css
+a {
+    color: darkorange;
+}
+
+a:link {
+    color: deeppink;
+} /* Links não visitados */
+
+a:visited {
+    color: rgb(86, 152, 79);
+} /* Links já visitados */
+
+a:hover {
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+} /* Quando o mouse passa por cima */
+
+a:active {
+    background-color: rgb(66, 122, 241);
+    color: white;
+    text-decoration: none;
+} /* Enquanto o link está sendo clicado */
+```
+✅ **Importante:** A ordem das regras para links deve seguir **LVHA** (Link, Visited, Hover, Active) para funcionar corretamente.
+
+---
+
+## 🛠️ **2. Estilizando Inputs com Pseudoclasses**
+Os inputs podem ser estilizados com base no estado deles.
+
+```css
+input:required {
+    background: blue;
+} /* Campos obrigatórios ficam com fundo azul */
+
+input:disabled {
+    background: rgb(42, 41, 41);
+    cursor: not-allowed;
+} /* Inputs desabilitados ganham um fundo escuro */
+
+input:checked + p {
+    background: red;
+} /* O parágrafo abaixo do input marcado fica vermelho */
+```
+✅ **Exemplo prático:** Quando um checkbox estiver marcado, o `<p>` logo abaixo dele mudará de cor.
+
+---
+
+## 🔄 **3. Transições CSS**
+As transições permitem criar efeitos suaves entre os estados dos elementos.
+
+```css
+.heading {
+    transition: all 300ms ease-in-out;
+}
+
+.heading:hover {
+    background-color: red;
+}
+```
+✅ **Explicação:** Quando o usuário passar o mouse sobre um elemento `.heading`, o fundo ficará vermelho de maneira **suave e gradual**.
+
+---
+
+## 🗒️ **4. Trabalhando com Listas e Seletores Específicos**
+Podemos estilizar elementos específicos dentro de uma lista.
+
+```css
+.pai .lista li:first-child {
+    background: red;
+} /* Apenas o primeiro item da lista ficará vermelho */
+
+.pai .lista li:last-child {
+    background: red;
+} /* Apenas o último item da lista ficará vermelho */
+```
+✅ **Uso prático:** Facilita a personalização de **menus e listas ordenadas**.
+
+---
+
+## 🎯 **Conclusão**
+Nesta aula, você aprendeu:
+✔ Como estilizar **links** em diferentes estados.
+✔ Como alterar a aparência de **inputs obrigatórios, desativados e marcados**.
+✔ Como aplicar **transições suaves** ao passar o mouse.
+✔ Como usar pseudoclasses para **selecionar elementos específicos em listas**.
+
+Essas técnicas são essenciais para melhorar a experiência do usuário e criar um **design mais dinâmico e interativo**.
+
+Se precisar de mais exemplos ou explicações, me avise! 🚀
+
