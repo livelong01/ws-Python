@@ -1,0 +1,100 @@
+https://www.w3schools.com/cssref/css_units.php
+
+
+1. Criando Links Internos com Âncoras (id)
+No HTML, podemos criar links que direcionam para partes específicas da página utilizando id.
+
+Exemplo:
+
+html
+Copiar
+Editar
+<h1>    
+    <a href="#one">One</a>
+    <a href="#two">Two</a>
+    <a href="#three">Three</a>
+</h1>
+Isso permite que, ao clicar no link "One", a página role automaticamente até a div com id="one", criando uma navegação fluida e melhorando a experiência do usuário.
+
+Para suavizar a rolagem, utilizamos:
+
+css
+Copiar
+Editar
+html {
+    scroll-behavior: smooth;
+}
+Isso faz com que a rolagem até o destino seja animada, ao invés de ser instantânea.
+
+2. Unidades de Medida no CSS: rem, vw, vh, vmax, em
+O código utiliza diferentes unidades de medida para tornar o layout mais flexível e responsivo.
+
+rem e em
+rem (Root EM): Baseia-se no tamanho da fonte do elemento html.
+em: Baseia-se no tamanho da fonte do elemento pai.
+Para facilitar os cálculos, é comum definir o html com font-size: 62.5%, pois:
+
+css
+Copiar
+Editar
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+Agora, 1rem = 10px, 1.5rem = 15px, e assim por diante.
+
+Isso facilita a responsividade, pois se o usuário aumentar o tamanho da fonte no navegador, todo o site se ajusta automaticamente.
+
+Exemplo de uso no p:
+
+css
+Copiar
+Editar
+p {
+    font-size: 2vmax; 
+}
+vmax: Se baseia na maior dimensão da tela. Se a tela for 1000x500, ele tomará os 1000 como referência.
+vw (Viewport Width): Se baseia na largura da tela.
+vh (Viewport Height): Se baseia na altura da tela.
+Isso permite que o tamanho da fonte se adapte dinamicamente conforme a tela aumenta ou diminui.
+
+3. Layout Responsivo com .pai e .pai > div
+A classe .pai controla a largura e a altura dos blocos principais:
+
+css
+Copiar
+Editar
+.pai {
+    width: 50rem; /* 500px */
+    height: 100vh; /* 100% da altura da tela */
+    background: yellow;
+}
+width: 50rem; → Define uma largura fixa.
+height: 100vh; → Faz com que o elemento ocupe 100% da altura da tela.
+A classe .pai > div estiliza a primeira div dentro de .pai:
+
+css
+Copiar
+Editar
+.pai > div {
+    width: 50%; /* Ocupa 50% da largura do pai */
+    height: 50rem;
+    background: blue;
+}
+O > div indica que essa estilização se aplica apenas à primeira div que aparece dentro de .pai.
+
+4. Personalização de Cores
+Foram criadas classes para definir cores diferentes para cada seção:
+
+css
+Copiar
+Editar
+.color-one {
+    background: turquoise;
+}
+.color-two {
+    background: violet;
+}
+Isso permite que cada bloco tenha uma identidade visual diferente, facilitando a navegação do usuário.
+
+Conclusão
+Essa aula ensinou como tornar um site mais responsivo, utilizando unidades flexíveis, além de melhorar a navegação interna com links de âncora e rolagem suave. 🚀

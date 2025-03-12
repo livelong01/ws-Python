@@ -1,0 +1,46 @@
+html {
+    font-size: 62.5%; /*usa a font padrao do navegador ex:16px */
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.pai {
+    width: 50rem; /*500px*/
+    /* width: 50vw;  50% da largura do viewrport */
+    height: 100vh; /*ocupa 100% aaltura da viewrport (tela)*/
+    background: yellow;
+}
+.pai > div { /*metodo para pegar a primeira div dps do pai.*/
+    width: 50%; /*ela usa 50% em relacao ao pai (referencia)*/
+    height: 50rem;
+    background: blue;
+} 
+/* .pai {
+    width: 30rem; 
+    height: 30rem;
+    background: yellow;
+} */
+p {
+    /* font-size: 20px; */
+    /* font-size: 1.6rem; */
+    font-size: 2vmax; /*conforme vc alarga o navegador a font aumenta (se baseia na maior dimensao do navegador ex:100px x 200px , baseia-se nos 200.*/
+}
+/* Normalmente as pessoas usam no html o font-size 62.5, porque
+isso vale 10px, dai vc pode usar o "rem" padronizado, onde, 1rem = 10px
+1.5rem = 15px e assim por diante, facilitando as contas.
+/* a vantagem de usar o rem é que qd o usuario altera o tamanho
+da fonte pelo navegador, para poder ler melhor, etc, todo o site
+é responsivo e cresce junto ou decresce se necessario. */
+
+/* tmb se pode usar o "em", mas esse é relativo ao pai do elemento,
+nao ao root como no caso do rem, o q pode ser bom dependendo do uso"*/
+
+.color-one {
+    background: turquoise;
+}
+.color-two {
+    background: violet;
+}
