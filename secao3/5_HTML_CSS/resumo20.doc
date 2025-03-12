@@ -1,0 +1,82 @@
+Specificity Calculator -  https://specificity.keegan.st/
+selector specificity - https://www.w3.org/TR/selectors-3/#specificity
+Como calcular a especificidade - https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_cascade/Specificity
+
+**Resumo da Aula 20 - Especificidade no CSS**
+
+Nesta aula, estudamos a **especificidade no CSS**, que determina a prioridade das regras aplicadas a um elemento quando há múltiplas declarações conflitantes.
+
+### **Ranking de Prioridade (Especificidade)**
+O CSS atribui valores às regras baseando-se em sua especificidade. A hierarquia de especificidade segue a seguinte ordem:
+
+1. **IDs** (1,0,0) → Mais prioridade (100 pontos)
+2. **Classes, atributos e pseudo-classes** (0,1,0) → Prioridade média (10 pontos)
+3. **Elementos e pseudo-elementos** (0,0,1) → Menor prioridade (1 ponto)
+
+Além disso, existe a propriedade `!important`, que sobrepõe todas as outras regras, inclusive regras inline dentro do HTML. No entanto, seu uso deve ser **evitado**, sendo aplicado apenas como último recurso.
+
+### **Exemplos de Especificidade**
+
+#### **Exemplo básico**
+```css
+#p {
+    background: red;
+} /* (1,0,0) = 100 pontos */
+
+.p {
+    background: blue !important;
+} /* (0,1,0) = 10 pontos, mas com !important tem a maior prioridade */
+
+p {
+    background: green;
+} /* (0,0,1) = 1 ponto */
+```
+
+Aqui, mesmo que `#p` tenha mais especificidade, a classe `.p` vencerá devido ao `!important`.
+
+#### **Combinando seletores para aumentar a pontuação**
+
+Podemos aumentar a especificidade combinando seletores:
+
+```css
+#p.p {
+    background: yellow;
+} /* (1,1,0) = 110 pontos */
+
+p#p {
+    background: darkcyan;
+} /* (1,0,1) = 101 pontos */
+```
+
+A regra `#p.p` tem mais especificidade do que `p#p`, pois combina um **ID** com uma **classe**.
+
+#### **Aumentando ainda mais a especificidade**
+
+Se combinarmos mais elementos, a especificidade aumenta:
+
+```css
+p#p.p {
+    background: rgb(66, 2, 85);
+    color: white;
+} /* (1,1,1) = 111 pontos */
+```
+
+E se adicionarmos um ID ao `body`, a especificidade sobe ainda mais:
+
+```css
+body#b p#p.p::selection:hover {
+    background: rgb(7, 1, 9);
+    color: white;
+} /* (2,1,1) = 211 pontos */
+```
+
+Aqui, o `body` possui um ID, o `p` também tem um ID e uma classe, além da pseudo-classe `hover` e do pseudo-elemento `::selection`, aumentando ainda mais a especificidade.
+
+### **Conclusão**
+- IDs têm mais prioridade que classes e elementos.
+- Combinar seletores aumenta a especificidade.
+- `!important` sobrepõe todas as regras, mas deve ser usado com cautela.
+- A regra mais específica sempre vence.
+
+Esse conhecimento é essencial para evitar conflitos no CSS e garantir que os estilos sejam aplicados corretamente. 🚀
+

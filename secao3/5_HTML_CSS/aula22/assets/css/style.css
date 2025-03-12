@@ -1,0 +1,24 @@
+.texto {
+    box-sizing: border-box;
+    display: block;
+    background: red;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 900px;
+    min-width: 0%;
+    min-height: 100px;
+    overflow: auto;
+    overflow-y: auto ;
+    margin: 0 auto 50px auto;
+    padding: 10px 5px;
+    border: 5px ridge black;
+}
+/* tmb tem o display "inline", que deixa o texto aberto,
+    porem as propriedades de cor etc, nao funcionam" */
+/* Nesse caso a largura e a altura expandem em 100% da tela, 
+porem o max-xxx limita o tamanho ate 900 px para cada dimensao. 
+O overflow faz com que o conteudo saia da box. 
+o overflw-y, faz com q ele saia pelo eixo Y, criandoo uma barra 
+para rolar e ver o conteudo todo.
+O margin 0 auto, faz com q o conteudo fique no centro da pagina.*/

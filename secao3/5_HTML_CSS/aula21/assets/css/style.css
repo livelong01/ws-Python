@@ -1,0 +1,21 @@
+body {
+    color:rgb(0, 255, 60);
+    font-family: sans-serif;
+}
+
+#texto {
+    color: rgb(7, 99, 156);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+p {
+    font-size: inherit;
+}
+/*Nesse caso eu herdei a font size do pai (#texto)*/
+h1 {
+    color: initial
+}
+/*Nesse caso eu nao herdei a font size do pai (#texto)
+usei a inicial/padrao */
+

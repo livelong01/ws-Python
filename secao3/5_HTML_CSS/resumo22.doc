@@ -1,0 +1,28 @@
+**Resumo da Aula 19 - CSS Separado do HTML**
+
+Nesta aula, aprendemos sobre propriedades importantes para estilizar e estruturar elementos em uma página web, focando no uso do `box-sizing`, `display`, `width`, `height`, `max-width`, `min-width`, `overflow`, `margin`, `padding` e `border`.
+
+---
+
+### **1. Box-sizing e Display**
+- `box-sizing: border-box;` faz com que padding e borda sejam incluídos nas dimensões totais do elemento, evitando que ele ultrapasse o tamanho definido por `width` e `height`.
+- `display: block;` define que o elemento ocupará toda a largura disponível na tela.
+- Existe também o `display: inline;`, que permite que o elemento fique na mesma linha de outros elementos, mas algumas propriedades como largura e altura não funcionam corretamente.
+
+### **2. Definição de Largura e Altura**
+- `width: 100%;` e `height: 100%;` fazem com que o elemento ocupe toda a largura e altura disponíveis.
+- `max-width: 900px;` e `max-height: 900px;` limitam as dimensões máximas do elemento, impedindo que ele ultrapasse esses valores.
+- `min-width: 0%;` e `min-height: 100px;` definem os tamanhos mínimos do elemento.
+
+### **3. Controle de Overflow**
+- `overflow: auto;` faz com que uma barra de rolagem apareça caso o conteúdo ultrapasse os limites do elemento.
+- `overflow-y: auto;` cria uma barra de rolagem apenas no eixo vertical (Y), permitindo a navegação pelo conteúdo sem alterar a largura do elemento.
+
+### **4. Margem, Preenchimento e Borda**
+- `margin: 0 auto 50px auto;` centraliza o elemento horizontalmente na página e adiciona um espaço de 50px na parte inferior.
+- `padding: 10px 5px;` define espaçamento interno de 10px no topo/baixo e 5px nos lados esquerdo/direito.
+- `border: 5px ridge black;` adiciona uma borda de 5px com efeito "ridge" e cor preta ao elemento.
+
+### **Conclusão**
+Com essas propriedades, conseguimos estruturar os elementos de forma organizada, limitando tamanhos e garantindo uma boa distribuição do conteúdo. O uso correto de `box-sizing` evita problemas com espaçamento, enquanto `overflow` garante que o conteúdo permaneça visível sem quebrar a estrutura da página.
+
