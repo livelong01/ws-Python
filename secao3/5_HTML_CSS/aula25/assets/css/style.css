@@ -1,0 +1,22 @@
+p {
+    color: rgb(0, 0, 0);
+    background-color: yellow;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    direction: ltr;
+    letter-spacing: 1px;
+    word-spacing: 10px;
+    line-height: 25px;
+    text-align: center;
+    /* text-decoration: overline;
+    text-decoration: line-through;
+    text-decoration: overline underline line-through; */
+    text-indent: 50px;
+    text-shadow: -3px 3px 5px red;
+    text-transform: capitalize;
+    text-transform: lowercase;
+    text-transform: uppercase;
+    
+
+}

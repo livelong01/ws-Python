@@ -8,13 +8,13 @@ html {
 }
 
 .pai {
-    width: 50rem; /*500px*/
-    /* width: 50vw;  50% da largura do viewrport */
+    /* width: 50rem; 500px */
+    width: 100vw;  /*50% da largura do viewrport*/
     height: 100vh; /*ocupa 100% aaltura da viewrport (tela)*/
     background: yellow;
 }
 .pai > div { /*metodo para pegar a primeira div dps do pai.*/
-    width: 50%; /*ela usa 50% em relacao ao pai (referencia)*/
+    width: 100%; /*ela usa 50% em relacao ao pai (referencia)*/
     height: 50rem;
     background: blue;
 } 

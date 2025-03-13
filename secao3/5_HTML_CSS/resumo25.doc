@@ -1,0 +1,100 @@
+
+https://www.w3schools.com/css/css_text.asp
+
+Título: "Estilizando Textos com CSS: Cores, Espaçamentos e Sombras"
+
+
+Resumo da Aula 25
+Nesta aula, aprofundamos os conceitos de estilização de textos no CSS, aprendendo a modificar cores, tamanhos, alinhamentos, espaçamentos e até adicionar sombras e efeitos visuais.
+
+1. Estilizando o Texto com color e background-color
+A propriedade color define a cor do texto, enquanto background-color define o fundo do elemento.
+
+Exemplo no CSS:
+
+css
+Copiar
+Editar
+p {
+    color: rgb(0, 0, 0); /* Texto preto */
+    background-color: yellow; /* Fundo amarelo */
+}
+Isso destaca o texto, tornando-o mais visível.
+
+2. Alterando o Estilo e Peso da Fonte
+Podemos modificar a aparência da fonte com font-size, font-style e font-weight.
+
+css
+Copiar
+Editar
+p {
+    font-size: 20px; /* Tamanho da fonte */
+    font-style: italic; /* Texto em itálico */
+    font-weight: bold; /* Texto em negrito */
+}
+Isso ajuda a destacar partes importantes do texto.
+
+3. Direção do Texto (direction)
+A propriedade direction controla a direção do texto:
+
+css
+Copiar
+Editar
+direction: ltr; /* Texto da esquerda para a direita (padrão) */
+Se estivéssemos escrevendo em árabe ou hebraico, poderíamos usar rtl (right-to-left).
+
+4. Espaçamento de Letras, Palavras e Linhas
+Podemos ajustar o espaçamento entre letras, palavras e linhas para melhorar a legibilidade.
+
+css
+Copiar
+Editar
+letter-spacing: 1px; /* Espaço entre letras */
+word-spacing: 10px; /* Espaço entre palavras */
+line-height: 25px; /* Espaçamento entre linhas */
+letter-spacing: Aumenta ou diminui a distância entre os caracteres.
+word-spacing: Define o espaço entre palavras.
+line-height: Controla o espaço entre as linhas do parágrafo.
+5. Alinhamento e Indentação do Texto
+Podemos centralizar, alinhar à esquerda ou direita, além de definir a indentação da primeira linha.
+
+css
+Copiar
+Editar
+text-align: center; /* Centraliza o texto */
+text-indent: 50px; /* Recuo na primeira linha do parágrafo */
+Isso melhora a organização visual do texto.
+
+6. Decoração e Transformação do Texto
+Podemos sublinhar, riscar ou alterar a capitalização das letras.
+
+css
+Copiar
+Editar
+/* text-decoration: overline; */  /* Linha acima do texto */
+/* text-decoration: line-through; */  /* Texto riscado */
+/* text-decoration: overline underline line-through; */  /* Todas as opções combinadas */
+text-transform: capitalize; /* Primeira letra de cada palavra maiúscula */
+text-transform: lowercase; /* Texto em minúsculas */
+text-transform: uppercase; /* Texto em maiúsculas */
+text-decoration adiciona efeitos como sublinhado, linha sobre o texto ou texto riscado.
+text-transform permite converter o texto em maiúsculas, minúsculas ou capitalizar a primeira letra de cada palavra.
+7. Sombras no Texto (text-shadow)
+Podemos adicionar efeitos de sombra para dar destaque ao texto.
+
+css
+Copiar
+Editar
+text-shadow: -3px 3px 5px red;
+Essa propriedade segue o formato:
+text-shadow: deslocamento-horizontal deslocamento-vertical desfoque cor;
+
+No exemplo:
+
+-3px 3px: Move a sombra 3 pixels para a direita e 3 pixels para baixo.
+5px: Aplica um leve desfoque.
+red: Define a cor da sombra.
+Isso pode ser usado para criar efeitos tridimensionais ou dar destaque a um título.
+
+Conclusão
+Nesta aula, aprendemos como personalizar textos com cores, espaçamentos, alinhamentos, sombras e efeitos decorativos. Essas técnicas são essenciais para melhorar a legibilidade e tornar um site mais atraente visualmente. 🚀
