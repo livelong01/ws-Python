@@ -1,0 +1,83 @@
+*{
+    margin:0;
+}
+.pai{
+    height: 300vh;
+}
+
+.filha-1, .filha-2, .filha-3 {
+    width: 300px;
+    height: 300px;
+    background:  rgba(255, 0, 0, 0.65);
+    margin: 10px;
+    position: static;
+}
+
+.filha-2 {
+    position: fixed;
+    /* O fixed é usado mt para menu, o botao na lateral para voltar ao topo, e banners para impedir o usuario de ver o conteudo do site.
+    pq ele deixa fixo o elemento, mesmo q vc role a tela, ele sempre fica visivel.*/
+    top: 30%;
+    right: 0;
+    z-index: 1;
+    background: yellow;
+    /* position:absolute;
+    z-index: -1; */
+} /* z-index configura a camada em que o elemento está. 
+    menor o numero, mais a atras ele estara
+    obs: se ele for negativo, fica atras do conteudo todo*/
+
+.filha-1 {
+    /* z-index: 1; */
+    /* position: relative; */
+    /* position: absolute; */
+    /* top: 50px;
+    left: 50px; */
+    /* height: 100%;
+    width: 100%;
+    margin: 0;  */
+    /* top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: -150px; */
+    /*com o top, margin top, left e margin left desse jeito, o elemento
+    sempre fica no meio, n importa o tamanho da tela.*/
+}
+/* o relativo, deixa a div ser movida, porem mantem os outros elementos,
+outras divs em seus lugares. Porem ao usar o absolute, é como se o objeto
+fosse movido para uma outra camada, fazendo os outros elementos, como outras divs
+ocuparem o espaço antes destinado para essa div.*/
+
+.filha-3 {
+    background: blue;
+    position: relative;
+    top:100px; /*qd o relative esta ativo, o top:100px, se afasta em relacao ao elemento (div) de cima.*/
+    left:100px; /* nesse caso é em relacao a parede da esquerda e e n a div*/
+
+}
+
+.outra {
+    position: absolute;
+    font-size: 50px;
+    background: white;
+    /* top:50px; */
+    right:0;
+    bottom: 0;
+    /*mesmo sendo absolute, nada acontece, mudando com top e left.
+    ele respeita o pai que esta relative (no caso a filha-3).*/ 
+}
+
+ul {
+    height: 100px;
+    overflow-y: auto;
+}
+
+ul li.sticky {
+    position: sticky;
+    background: gray;
+    top:0;
+}
+/* O comportamento desse sticky + top 0, é mt interessante.
+Ele faz o subtitulo ficar fixo, assim vc vai rolando para baixo,
+ate que encontre outro subtitulo, que agora será ele que ficara fixo
+e assim por diante. Funciona bem numa agenda, por ex.*/
