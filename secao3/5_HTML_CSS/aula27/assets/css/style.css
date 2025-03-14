@@ -1,0 +1,107 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.grid {
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 73px;
+}
+.grid::after {
+content: '';
+display: block;
+clear: both;
+}
+.grid .col {
+    /* width: 33.33%; */
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+
+.grid .col-content {
+    /* width: 100px;
+    height: 100px; quadrado*/
+    width: 100%;
+    height: 100%;
+    float: right;
+    background: rgb(252, 2, 2); /*ABCDEF123456789 SAO HEXADECIMAL.*/ 
+    /* border-radius: 100px 100px 100px 100px; ovular*/
+    /* border-radius: 50%; circulo perfeito se o elemento for quadrado */
+    box-shadow: inset 5px 5px 5px 5px blue, 5px 5px 5px rgba(0,0,0,.5);
+    /* inset é a sombra q vai pra dentro do elemento sombreado (estranho).
+     1 e 2 sao a direcao da sombra, o terceiro é espalhamento(blur), o quarto é espalha(alarga) e a cor 
+     pode tmb usar a virgula e por outra sombra adicional.*/
+}
+
+.menu {
+    position: fixed;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    top: 0;
+    z-index: 1;
+}
+.menu ul {
+    list-style: none;
+    display: block;
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+.menu ul li{
+    float: left;
+}
+.menu ul li a{
+    display: block;
+    color: rgb(211, 50, 50);
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+.menu ul li a:hover{
+   background: #333
+}
+
+@media all and (max-width: 320px) {
+    .grid .col {
+        width: 100%;
+    }
+/*dispositivos com menos de 320pxs aplica uma regra para a coluna (1 coluna)*/
+}
+
+@media all and (min-width: 321px) and (max-width: 768px){
+    .grid .col {
+        width: 50%;
+    }
+/* para os que tem entre 321 e 768pxs aplica essa regra (2 colunas)*/
+}
+/*para os deemais aplica a regra geral, dada la em cima (3 colunas)*/
+
+@media all and (min-width: 769px) and (max-width: 1200px){
+    .grid .col {
+        width: 33.3%;
+    }
+}
+
+@media all and (min-width: 1201px){
+    .grid .col {
+        width: 25%;
+    }
+}
+
+.ultimo {
+    background: turquoise;
+    padding-top: 73px;
+    height: 100vh;
+}
+
+.ultimo .full-page-content{
+    padding: 0 30px;
+    max-width: 100%;
+    margin: 0 auto;
+}

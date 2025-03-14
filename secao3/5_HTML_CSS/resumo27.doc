@@ -1,0 +1,146 @@
+https://www.w3schools.com/cssref/atrule_media.php
+
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_media_queries/Using_media_queries
+
+https://devfacts.com/media-queries-breakpoints/ (todo ano muda)
+
+**Aula 27 - Separando CSS do HTML e Implementando Responsividade**
+
+### 1. Separação de CSS e HTML
+Nesta aula, reforçamos a importância de manter o CSS separado do HTML. Isso melhora a organização do código, facilita a manutenção e permite reutilização eficiente dos estilos. O CSS foi vinculado ao HTML por meio da tag `<link>` no `<head>`:
+
+```html
+<link rel="stylesheet" href="./assets/css/style.css" />
+```
+
+Isso garante que as regras de estilo sejam aplicadas sem precisar escrever CSS inline ou dentro do próprio HTML.
+
+### 2. Reset CSS e Box-Sizing
+Para garantir uma padronização entre diferentes navegadores, aplicamos um reset básico e a propriedade `box-sizing`:
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+```
+
+Isso impede que margens e paddings interfiram no tamanho total dos elementos, tornando o layout mais previsível.
+
+### 3. Implementação da Navegação Fixa
+Criamos um menu fixo no topo da página utilizando a propriedade `position: fixed;`, garantindo que ele permaneça visível ao rolar a página:
+
+```css
+.menu {
+    position: fixed;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    top: 0;
+    z-index: 1;
+}
+```
+
+Os links foram estilizados para transições suaves ao passar o mouse:
+
+```css
+.menu ul li a {
+    display: block;
+    color: rgb(211, 50, 50);
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover {
+   background: #333;
+}
+```
+
+### 4. Grid Layout e Distribuição de Colunas
+As colunas do layout foram definidas para diferentes tamanhos de tela usando float. A classe `.col` controla o comportamento das colunas:
+
+```css
+.grid .col {
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+```
+
+O conteúdo dentro das colunas recebeu estilização para preenchimento completo e efeito de sombra interna e externa:
+
+```css
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    float: right;
+    background: rgb(252, 2, 2);
+    box-shadow: inset 5px 5px 5px 5px blue, 5px 5px 5px rgba(0,0,0,.5);
+}
+```
+
+### 5. Responsividade com Media Queries
+Para adaptar o layout a diferentes dispositivos, utilizamos media queries:
+
+- **Para telas menores que 320px** (1 coluna):
+  
+  ```css
+  @media all and (max-width: 320px) {
+      .grid .col {
+          width: 100%;
+      }
+  }
+  ```
+  
+- **Para telas entre 321px e 768px** (2 colunas):
+  
+  ```css
+  @media all and (min-width: 321px) and (max-width: 768px) {
+      .grid .col {
+          width: 50%;
+      }
+  }
+  ```
+
+- **Para telas entre 769px e 1200px** (3 colunas):
+  
+  ```css
+  @media all and (min-width: 769px) and (max-width: 1200px) {
+      .grid .col {
+          width: 33.3%;
+      }
+  }
+  ```
+
+- **Para telas maiores que 1200px** (4 colunas):
+  
+  ```css
+  @media all and (min-width: 1201px) {
+      .grid .col {
+          width: 25%;
+      }
+  }
+  ```
+
+### 6. Seção Final de Página
+Criamos uma seção final com fundo colorido e espaçamento adequado para melhor leitura:
+
+```css
+.ultimo {
+    background: turquoise;
+    padding-top: 73px;
+    height: 100vh;
+}
+
+.ultimo .full-page-content {
+    padding: 0 30px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+```
+
+### Conclusão
+Nesta aula, reforçamos a separação de HTML e CSS, criamos um menu fixo no topo, organizamos colunas com `float` e aplicamos media queries para tornar o layout responsivo. Esses conceitos são essenciais para criar páginas que se adaptam a diferentes tamanhos de tela e melhoram a experiência do usuário.
+
+
