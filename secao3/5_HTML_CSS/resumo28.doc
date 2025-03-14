@@ -1,0 +1,131 @@
+https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/CSS_layout/Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+Aqui está o resumo da aula 28 (parte 1), focado apenas no que é novo.  
+
+---
+
+### Introdução ao Flexbox: Organização de Layouts com Flex  
+
+Nesta aula, aprendemos sobre **Flexbox**, uma técnica poderosa para organizar elementos dentro de um container flexível.  
+
+#### **Novos conceitos abordados:**  
+
+1. **`display: flex;`**  
+   - Transforma o container (`.flex-container`) em um flex container.  
+   - Os elementos filhos (`.flex-item`) tornam-se automaticamente flexíveis.  
+
+2. **`flex-direction`**  
+   - Define a direção dos itens dentro do container:  
+     - `row` (padrão) → Itens organizados na horizontal, da esquerda para a direita.  
+     - `column` → Itens organizados na vertical.  
+
+3. **`justify-content`** (Alinhamento horizontal dos itens)  
+   - `space-between` → Distribui os itens igualmente, com espaços entre eles.  
+   - Outros valores possíveis:  
+     - `flex-start` → Alinha os itens à esquerda.  
+     - `flex-end` → Alinha os itens à direita.  
+     - `center` → Centraliza os itens.  
+     - `space-around` → Adiciona espaçamento ao redor dos itens.  
+     - `space-evenly` → Espaços iguais entre os itens e nas laterais.  
+
+4. **`align-items`** (Alinhamento vertical dos itens dentro do container)  
+   - `flex-start` → Itens alinhados no topo do container.  
+   - `flex-end` → Itens alinhados na parte inferior.  
+   - `center` → Itens centralizados verticalmente.  
+   - `stretch` (padrão) → Itens ocupam toda a altura disponível.  
+   - `baseline` → Alinha os itens pela base do texto.  
+
+5. **`align-content`**  
+   - Aplica-se quando há várias linhas de itens (com `flex-wrap: wrap;`).  
+   - Funciona como `justify-content`, mas no eixo vertical.  
+
+6. **`order`** (Reordenando elementos)  
+   - Permite alterar a posição de um item na ordem de exibição.  
+   - Exemplo: `order: 1;` no terceiro item faz com que ele vá para o final.  
+   - O valor padrão de `order` para todos os itens é `0`.  
+
+7. **`flex-wrap`**  
+   - Controla se os itens devem permanecer na mesma linha ou quebrar para novas linhas quando o espaço não for suficiente.  
+   - `nowrap` (padrão) → Todos os itens ficam na mesma linha.  
+   - `wrap` → Itens quebram para uma nova linha se necessário.  
+
+8. **`flex` (Shorthand para `flex-grow`, `flex-shrink` e `flex-basis`)**  
+   - `flex: 1 1 320px;` significa:  
+     - `1` → Pode crescer se houver espaço (`flex-grow`).  
+     - `1` → Pode diminuir se necessário (`flex-shrink`).  
+     - `320px` → Tamanho base do item (`flex-basis`).  
+
+#### **Exemplo prático de organização flexível:**  
+```css
+.flex-item {
+    flex: 1 1 320px; /* Itens flexíveis que crescem e encolhem conforme necessário */
+}
+```
+Isso garante que os itens se ajustem dinamicamente ao espaço disponível, tornando o layout responsivo e eficiente.  
+
+---
+
+Esse resumo cobre tudo de novo que você aprendeu! 🚀 Se precisar de mais detalhes, só avisar.
+
+
+
+PARTE 2:
+
+### Layout Responsivo com Flexbox: Colunas e Galeria de Imagens  
+
+Nesta aula, aprofundamos o uso do **Flexbox** para estruturar layouts responsivos com colunas e galerias.  
+
+#### **Novos conceitos abordados:**  
+
+1. **Criação de um layout com duas colunas (`.two-columns`)**  
+   - O `display: flex;` permite que os elementos `.col` fiquem lado a lado.  
+   - Cada `.col` funciona como uma coluna independente, podendo conter textos e outros elementos internos.  
+   - Exemplo:  
+     ```css
+     .two-columns {
+         display: flex; /* Ativa o flexbox */
+     }
+     ```
+  
+2. **Flexbox dentro de colunas (`.col`)**  
+   - Cada coluna (`.col`) também usa `display: flex;`, mas com `flex-direction: column;`, organizando os elementos verticalmente.  
+   - O `margin` e `padding` ajudam a dar espaçamento e melhorar a legibilidade.  
+   - Exemplo:  
+     ```css
+     .two-columns .col {
+         display: flex;
+         flex-direction: column; /* Elementos empilhados na vertical */
+         background: green;
+         margin: 15px;
+         padding: 20px;
+     }
+     ```
+
+3. **Galeria de imagens responsiva (`.gallery`)**  
+   - O `display: flex;` e `flex-flow: row wrap;` permitem que os itens da galeria sejam distribuídos horizontalmente e quebrem para a próxima linha conforme necessário.  
+   - Cada `.img` tem um `flex: 1 0 20%;`, garantindo que ocupem **20% da largura disponível**, mas não encolham (`flex-shrink: 0`).  
+   - O `margin: 10px;` adiciona espaçamento entre as imagens.  
+   - Exemplo:  
+     ```css
+     .gallery {
+         display: flex;
+         flex-flow: row wrap; /* Itens organizados horizontalmente e quebram quando necessário */
+     }
+
+     .gallery .img {
+         flex: 1 0 20%; /* Cada imagem ocupa 20% da largura do container */
+         height: 50px;
+         background: blue;
+         margin: 10px;
+     }
+     ```
+
+#### **Resumo prático:**  
+- **Usamos Flexbox para criar um layout com duas colunas**, tornando-o mais flexível e responsivo.  
+- **Criamos uma galeria de imagens dinâmica** que se ajusta automaticamente ao tamanho da tela.  
+- **Utilizamos `flex-direction: column;` para alinhar elementos verticalmente dentro das colunas.**  
+- **Exploramos `flex-flow: row wrap;` para permitir que os itens da galeria quebrem de linha automaticamente.**  
+
+Esse aprendizado permite criar layouts modernos e responsivos de forma eficiente! 🚀

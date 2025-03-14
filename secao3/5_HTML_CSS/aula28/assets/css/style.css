@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    align-items: flex-start;
+    /* align-content:flex-start; */
+    background: yellow;
+    /* flex-flow: row wrap; */
+ 
+    height: 800px;
+}
+/*  ***display: flex; ***
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    ao usar o display flex, tudo isso vem como padrao*/
+    /*baseline, serve pra aliar pela parte de baixo da letra, fonte*/
+.flex-item {
+    /* margin: 10px; */
+    /* height: 200px; */
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 320px;  atalho:*/
+    /* flex: 1 1 320px; */
+    width: 100%;
+    color: white;
+    background: red;
+    /* margin-bottom: 2%; */
+}
+.flex-item:nth-child(3){
+    /* font-size: 40px; */
+    /*serve para modificar apenas o terceiro item do flex-item*/
+    order: 1; 
+    /* jogou o filho 3 para o final dos itens 
+    todos começam com "zero" */
+}
