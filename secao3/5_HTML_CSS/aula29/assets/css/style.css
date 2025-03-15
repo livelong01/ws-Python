@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: sans-serif;
+    font-size: 40px;
+}
+
+.grid {
+    display: grid;
+    max-width: 1200px;
+    /*grid-template-columns: 200px 1fr 2fr;*/ /*a 1 coluna tem 200px, a segunda tem o restante do espalço, a terceira tem 2x o espaço da segunda.*/
+    margin: 0 auto;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3,  1fr);
+    /*repeat ajuda a fazer varias colunas repetidas com uma unica funcao)*/
+    /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+    /*com isso pode fazer um desing responsivo com apenas 1 LINHA!*/
+    /* grid-template-rows: repeat(2, 2fr 1fr); */
+    gap: 30px;
+}
+.grid div {
+    background: tomato;
+    min-height: 100px;  
+}
+
+.grid div~:nth-child(5), .grid div~:nth-child(6) {
+    /* grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 6; */
+    background: darkred;
+    /*OU vc pode usar span*/
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+/* .grid div~:nth-child(5) {
+    z-index: 1;
+    background: yellow;
+} */
