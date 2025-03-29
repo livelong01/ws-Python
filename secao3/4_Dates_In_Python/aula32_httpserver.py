@@ -9,7 +9,7 @@ import requests
 # precisa informar a porta no fim, pq por padrao ele vai para a port a80 (por conta do http)
 url = 'http://localhost:3333/'
 url2 = 'https://www.ahnegao.com.br/'
-response = requests.get(url2)
+response = requests.get(url)
 
 print(response.status_code)
 # print(response.headers)
