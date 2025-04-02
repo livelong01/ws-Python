@@ -25,7 +25,7 @@ if response.status_code == 200:
     # Se encontrou manchetes, exibir os títulos
     if headlines:
         # Pega as 5 primeiras manchetes
-        for idx, headline in enumerate(headlines[:5]):
+        for idx, headline in enumerate(headlines[:8]):
             print(f"{idx+1}. {headline.text.strip()} - {headline['href']}")
     else:
         print("Nenhuma manchete encontrada. O layout pode ter mudado.")
