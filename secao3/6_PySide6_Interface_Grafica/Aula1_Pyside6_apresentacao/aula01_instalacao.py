@@ -25,6 +25,9 @@
 #   antes de usar qualquer software de terceiros.
 #   https://tldrlegal.com/license/gnu-lesser-general-public-license-v3-(lgpl-3)
 
+#source venv/bin/activate  # Linux Ativar o ambiente virtual!
+
+
 
 import PySide6.QtCore
 

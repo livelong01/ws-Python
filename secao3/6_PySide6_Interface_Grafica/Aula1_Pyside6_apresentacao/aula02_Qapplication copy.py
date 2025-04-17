@@ -17,3 +17,7 @@ botao.show()  # Mostra o botão na tela
 # botao2.show()
 
 app.exec()  # Executa a aplicação
+
+
+
+
