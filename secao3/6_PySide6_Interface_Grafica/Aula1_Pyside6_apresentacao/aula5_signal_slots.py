@@ -20,7 +20,7 @@ window.setCentralWidget(central_widget)
 window.setWindowTitle('Minha janela bonita')
 layout = QGridLayout()
 
-botao1 = QPushButton("Botão 1") #oi
+botao1 = QPushButton("Botão 1")  # oi
 botao1.setStyleSheet("background-color: red; color: white; font-size: 80px;")
 
 botao2 = QPushButton("Botão 2")
@@ -36,31 +36,36 @@ layout.addWidget(botao2, 2, 2, 1, 1)  # Adiciona o botão ao layout
 # Adiciona o botão ao layout com span de 2 colunas
 layout.addWidget(botao3, 3, 1, 1, 2)
 
-#StatusBar!
+# StatusBar!
 status_bar = window.statusBar()
 status_bar.showMessage("Mostrar mensagem")
 
-#exemplo de acao
+# exemplo de acao
+
+
 @Slot()
 def slot_example(status_bar):
     def inner():
         status_bar.showMessage('O slot foi executado')
     return inner
 
-#exemplo 2 de acao
+# exemplo 2 de acao
+
+
 @Slot()
 def outro_slot(checked):
     print('Está marcado? ', checked)
 
 
-#exemplo 2 de acao
+# exemplo 2 de acao
 @Slot()
 def terceiro_slot(segunda_acao):
     def inner():
         outro_slot(segunda_acao.isChecked())
     return inner
 
-#MenuBar:
+
+# MenuBar:
 menu = window.menuBar()
 primeiro_menu = menu.addMenu('Primeiro menu')
 primeira_acao = primeiro_menu.addAction('Primeira acao!')
@@ -68,11 +73,12 @@ primeira_acao.triggered.connect(
     slot_example(status_bar)
 )
 
-#MenuBar2 : 
+# MenuBar2 :
 segunda_acao = primeiro_menu.addAction('Segunda acao!')
 segunda_acao.setCheckable(True)
-segunda_acao.toggled.connect(outro_slot) # termina em "ed" para nos conectar
-segunda_acao.hovered.connect(terceiro_slot(segunda_acao)) # termina em "ed" para nos conectar
+segunda_acao.toggled.connect(outro_slot)  # termina em "ed" para nos conectar
+# termina em "ed" para nos conectar
+segunda_acao.hovered.connect(terceiro_slot(segunda_acao))
 
 botao1.clicked.connect(terceiro_slot(segunda_acao))
 
