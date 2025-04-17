@@ -19,7 +19,7 @@ window.setCentralWidget(central_widget)
 window.setWindowTitle('Minha janela bonita')
 layout = QGridLayout()
 
-botao1 = QPushButton("Botão 1")
+botao1 = QPushButton("Botão 1") #oi
 botao1.setStyleSheet("background-color: red; color: white; font-size: 80px;")
 
 botao2 = QPushButton("Botão 2")
