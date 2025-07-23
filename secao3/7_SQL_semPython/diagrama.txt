@@ -1,0 +1,32 @@
+
+Resumo: 
+
+Diagrama de entidades e relacionamentos: 
+
+cada entidade é uma "tabela" na base de dados.
+
+PK primary key =  ID, numero que identifica o registro de cada pessoa*coisa, registrada.
+
+FK foreign key = user_id, sao dois ids, que sao usados para identificar um ao outro. Ex: id e id_user, um tem acessoa  informacao do outro.
+
+
+RELACOES:
+
+crossfoot = pé de galinha, relacao:
+    ***Não é mt usado, pois se isso acontece, 1 para 1, melhor por tudo na mesma base de dados.
+dois traços ( || ):
+    O USUARIO é obrigatorio, 1 usuario precisa ter um usuario e um usuario precisa ter um perfil.
+
+um traco e bola ( 0|), obrigatorio ter usuario, mas nao obrigado a ter um perfil.
+
+bola e pe de galinha, um usuario nao precisa de perfil ou pode ter muitos.
+
+traço e pe de galinha, um usuario tem que ter um perfil ou mais.  (Um para mts)
+
+dois tracoes e pe de galinha = muitos para muitos. (nao se pode fazer diretamente.)
+
+joinig table, é o intermediario que registra e atrela ids de usuarios com permissoes. (que pode ser mais de uma)
+
+
+
+

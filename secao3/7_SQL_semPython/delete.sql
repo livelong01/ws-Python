@@ -1,0 +1,4 @@
+-- DELETE APAGA COISAS DA TABELA DE FORMA IRREVERSIVEL ( SE VC N TIVER UM BACKUP)
+-- DELETE FROM Users where id BETWEEN 10 and 15;
+select * from Users where id BETWEEN 10 and 15;
+
