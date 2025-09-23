@@ -42,7 +42,15 @@ sql = (
     'VALUES '
     '( ?, ?)'
 )
-cursor.execute(sql, ["Joao Nogueira", 78.6])
+# cursor.execute(sql, ["Joao Nogueira", 78.6])
+cursor.executemany(sql, 
+    [
+        ["Maria Silva", 92.4],
+        ["Pedro Santos", 65.1],
+        ["Ana Oliveira", 81.7],
+        ["Carlos Mendes", 74.3],
+        ["Beatriz Costa", 88.9]
+    ])
 connection.commit()
 
 # cursor.executemany('', '')
