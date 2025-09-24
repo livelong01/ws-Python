@@ -11,5 +11,21 @@ for row in cursor.fetchall():
     print(_id, name, weight)
 
 
+print('------')
+#  -------------------- ESCOLHER APENAS o primeiro 
+# row = cursor.fetchone()
+# print(row)
+
+#  --------------------Escolher exatamente 1
+
+cursor.execute(
+    f'SELECT * FROM {TABLE_NAME} '
+    'WHERE id = "3"'
+)
+
+row = cursor.fetchone()
+_id, name, weight = row
+print(_id, name, weight)
+
 cursor.close()
 connection.close()
