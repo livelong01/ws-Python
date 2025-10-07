@@ -34,11 +34,15 @@ with connection:
 
     # COMEÇO A MANIPULAR DADOS A PARTIR DAQUI
     with connection.cursor() as cursor:
-        result = cursor.execute(
+        sql = (
             f'INSERT INTO {TABLE_NAME} '
             '(nome, idade) '
-            'VALUES ("Jonathan", 33) '
+            'VALUES '
+            '(%s, %s) '
         )
+        data = ('Jonathan', 34)
+        result = cursor.execute(sql, data)
+
         print('Numero de linhas afetadas: ', result)
     connection.commit()
 
