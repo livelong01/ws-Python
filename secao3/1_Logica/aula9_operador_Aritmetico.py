@@ -1,5 +1,6 @@
 adicao = 10 + 10
 print('Adição', adicao)
+print(type(adicao))
 
 subtracao = 10 - 5
 print('Subtração', subtracao)

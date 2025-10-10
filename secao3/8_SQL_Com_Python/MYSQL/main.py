@@ -43,7 +43,23 @@ with connection:
         data = ('Jonathan', 34)
         result = cursor.execute(sql, data)
 
-        print('Numero de linhas afetadas: ', result)
+        # print('Numero de linhas afetadas: ', result)
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        sql = (
+            f'INSERT INTO {TABLE_NAME} '
+            '(nome, idade) '
+            'VALUES '
+            '(%(nome)s, %(idade)s) '
+        )
+        data2 = {
+            "nome": "Jorge",
+            "idade": 28
+        }
+        result = cursor.execute(sql, data2)
+
+        # print('Numero de linhas afetadas: ', result)
     connection.commit()
 
 
