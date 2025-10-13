@@ -46,6 +46,7 @@ with connection:
         # print('Numero de linhas afetadas: ', result)
     connection.commit()
 
+# usando dicionario :
     with connection.cursor() as cursor:
         sql = (
             f'INSERT INTO {TABLE_NAME} '
@@ -55,12 +56,45 @@ with connection:
         )
         data2 = {
             "nome": "Jorge",
-            "idade": 28
+            "idade": 29
         }
         result = cursor.execute(sql, data2)
 
         # print('Numero de linhas afetadas: ', result)
     connection.commit()
+    
+# Usando dicionario com multiplas entradas 
 
+    with connection.cursor() as cursor:
+        sql = (
+            f'INSERT INTO {TABLE_NAME} '
+            '(nome, idade) '
+            'VALUES '
+            '(%(nome)s, %(idade)s) '
+        )
+        data3 = (
+            {"nome": "Carmem","idade": 45},
+            {"nome": "Julia","idade": 85},
+            {"nome": "Corvo","idade": 15},
+            {"nome": "Julho","idade": 25},
+        )
+        result = cursor.executemany(sql, data3)  # type: ignore
+        print('Numero de linhas afetadas: ', result)
+    connection.commit() 
 
+# Usando tuplas com multiplas entradas 
 
+    with connection.cursor() as cursor:
+        sql = (
+            f'INSERT INTO {TABLE_NAME} '
+            '(nome, idade) '
+            'VALUES '
+            '(%s, %s) '
+        )
+        data4 = (
+            ("Siri", 35),
+            ("Cortana", 58),
+        )
+        result = cursor.executemany(sql, data4)  # type: ignore
+        print('Numero de linhas afetadas: ', result)
+    connection.commit()
