@@ -98,3 +98,27 @@ with connection:
         result = cursor.executemany(sql, data4)  # type: ignore
         print('Numero de linhas afetadas: ', result)
     connection.commit()
+
+# LENDO VALORES COM SELECT
+
+    with connection.cursor() as cursor:
+        sql = (
+            f'SELECT * FROM {TABLE_NAME} '
+        )
+
+        cursor.execute(sql)
+
+        data5 = cursor.fetchall()  # A melhor pratica é por numa variavel
+        for row in data5:
+            print(row)
+        for row in data5:
+            print(row)
+
+        # for row in cursor.fetchall():  # Ele esgota os dados e na proxima tentativa 
+        #     print(row)
+        # for row in cursor.fetchall():  # isso nao faz nada.
+        #     print(row)
+
+        
+
+
