@@ -104,6 +104,7 @@ with connection:
     with connection.cursor() as cursor:
         sql = (
             f'SELECT * FROM {TABLE_NAME} '
+            'WHERE id >= 5'
         )
 
         cursor.execute(sql)
@@ -111,13 +112,15 @@ with connection:
         data5 = cursor.fetchall()  # A melhor pratica é por numa variavel
         for row in data5:
             print(row)
-        for row in data5:
-            print(row)
+        # for row in data5:
+        #     print(row)
 
         # for row in cursor.fetchall():  # Ele esgota os dados e na proxima tentativa 
         #     print(row)
         # for row in cursor.fetchall():  # isso nao faz nada.
         #     print(row)
+
+
 
         
 
