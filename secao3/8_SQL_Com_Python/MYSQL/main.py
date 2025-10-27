@@ -112,8 +112,10 @@ with connection:
         cursor.execute(sql, (menor_id, maior_id))
 
         data5 = cursor.fetchall()  # A melhor pratica é por numa variavel
-        for row in data5:
-            print(row)
+        # for row in data5:
+        #     print(row)
+
+
         # for row in data5:
         #     print(row)
 
@@ -122,7 +124,36 @@ with connection:
         # for row in cursor.fetchall():  # isso nao faz nada.
         #     print(row)
 
+    with connection.cursor() as cursor:
+        sql = (
+            f'DELETE FROM {TABLE_NAME} '
+            f'WHERE ID = %s '  
+        )
 
+        cursor.execute(sql, (1,))
+        connection.commit()
+
+        cursor.execute(f'SELECT  * FROM {TABLE_NAME} ')
+
+        # for row in cursor.fetchall():
+        #     print(row)
+
+    # Editando com Delete, where e placeholders no PYmYSQL
+    with connection.cursor() as cursor:
+        sql = (
+            f'UPDATE {TABLE_NAME} '
+            f'SET nome = %s, idade = %s '
+            f'WHERE ID=%s '
+        )
+
+        cursor.execute(sql, ('Jaqueline', 15, 4))
+        connection.commit()
+
+        cursor.execute(f'SELECT  * FROM {TABLE_NAME} ')
+
+        for row in cursor.fetchall():
+            print(row)
+    connection.commit()
 
         
 
