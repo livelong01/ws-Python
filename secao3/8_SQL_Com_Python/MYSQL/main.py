@@ -102,12 +102,14 @@ with connection:
 # LENDO VALORES COM SELECT
 
     with connection.cursor() as cursor:
+        menor_id = int(input('Digite o menor id para consulta: '))
+        maior_id = int(input('Digite o maior id para consulta: '))
         sql = (
             f'SELECT * FROM {TABLE_NAME} '
-            'WHERE id >= 5'
+            f'WHERE id BETWEEN %s AND %s '
         )
 
-        cursor.execute(sql)
+        cursor.execute(sql, (menor_id, maior_id))
 
         data5 = cursor.fetchall()  # A melhor pratica é por numa variavel
         for row in data5:

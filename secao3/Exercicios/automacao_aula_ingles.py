@@ -15,13 +15,13 @@ except ImportError:
     import importlib
     pyautogui = importlib.import_module("pyautogui")
 
-try:
-    import keyboard
-except ImportError:
-    import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "keyboard"])
-    import importlib
-    keyboard = importlib.import_module("keyboard")
+# try:
+#     import keyboard
+# except ImportError:
+#     import subprocess
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", "keyboard"])
+#     import importlib
+#     keyboard = importlib.import_module("keyboard")
 
 
 def tarefa():
@@ -35,5 +35,7 @@ def tarefa():
     pyautogui.press('enter')
     time.sleep(3)
 
-keyboard.add_hotkey('ctrl+alt+shift+e', tarefa)
-keyboard.wait('esc')
+
+tarefa()
+# keyboard.add_hotkey('ctrl+alt+shift+e', tarefa)
+# keyboard.wait('esc')
