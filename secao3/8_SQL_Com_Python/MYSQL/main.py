@@ -16,7 +16,7 @@ connection = pymysql.connect(
     user=os.environ['MYSQL_USER'],
     password=os.environ['MYSQL_PASSWORD'],
     database=os.environ['MYSQL_DATABASE'],
-    cursorclass=pymysql.cursors.DictCursor,
+    cursorclass=pymysql.cursors.SSDictCursor,
 )
 
 with connection:
@@ -153,10 +153,21 @@ with connection:
 
         cursor.execute(f'SELECT  * FROM {TABLE_NAME} ')
 
-        for row in cursor.fetchall():
-            print(row['nome'])
-            print(row['id'])
-            print(row.keys)
+        print()
+        print('For 1: ')
+        # data6 = cursor.fetchall()
+        for row in cursor.fetchall_unbuffered():
+            print(row)
+
+            if row['id'] >= 5:
+                break
+
+        print()
+        print('For 2: ')
+        # cursor.scroll(-1)  # voltar uma linha
+        # cursor.scroll(1, 'absolute')  # volta do indice 1 (segundo indice, excluindo o primeiro.)
+        for row in cursor.fetchall_unbuffered():
+            print(row)
         
         connection.commit()
 
