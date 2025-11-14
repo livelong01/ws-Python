@@ -15,24 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
+from django.urls import path, include
 
 
-# HTTP Request <-> HTTP Response
-# MVT (MVC)
+#http://127.0.0.1:8000/
+#http://127.0.0.1:8000 sao a mesma coisa.
+#http://127.0.0.1:8000/blog
+#http://127.0.0.1:8000/blog/articles/
+#http://127.0.0.1:8000/blog/articles/comments
+#http://127.0.0.1:8000/blog/articles/categories
+#http://127.0.0.1:8000/blog/articles/authors
 
 
-def home(request):
-    print('HOME')
-    return HttpResponse('HOME PAGE')
 
-def blog(request):
-    print('posso fazer outras coisas')
-    return HttpResponse('blog')
+
 
 urlpatterns = [
-    path('blog/', blog),
-    path('', home)
+    path('blog/', include('blog.urls')),
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
 ]
