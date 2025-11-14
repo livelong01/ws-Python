@@ -16,7 +16,7 @@ connection = pymysql.connect(
     user=os.environ['MYSQL_USER'],
     password=os.environ['MYSQL_PASSWORD'],
     database=os.environ['MYSQL_DATABASE'],
-    cursorclass=pymysql.cursors.SSDictCursor,
+    cursorclass=pymysql.cursors.DictCursor,
 )
 
 with connection:
@@ -149,26 +149,26 @@ with connection:
         )
 
         cursor.execute(sql, ('Jaqueline', 15, 4))
-        connection.commit()
 
-        cursor.execute(f'SELECT  * FROM {TABLE_NAME} ')
+        cursor.execute(f'SELECT id FROM {TABLE_NAME} ORDER BY id DESC LIMIT 1')
+        lastIdFromSelect = cursor.fetchone()
 
-        print()
-        print('For 1: ')
-        # data6 = cursor.fetchall()
-        for row in cursor.fetchall_unbuffered():
-            print(row)
+        resultFromSelect = cursor.execute(f'SELECT  * FROM {TABLE_NAME} ')
 
-            if row['id'] >= 5:
-                break
-
-        print()
-        print('For 2: ')
-        # cursor.scroll(-1)  # voltar uma linha
-        # cursor.scroll(1, 'absolute')  # volta do indice 1 (segundo indice, excluindo o primeiro.)
-        for row in cursor.fetchall_unbuffered():
+        data6 = cursor.fetchall()
+        for row in data6:
             print(row)
         
+
+        
+        print('resultFromSelect', resultFromSelect)
+        print('len(data6)', len(data6))
+        print('rowcount', cursor.rowcount)  # rowcount funciona apos qualquer comando execute (sempre pega o ultimo)
+        print('lastrowid', cursor.lastrowid)  # lastrowid funciona apenas apos inserts
+        print('lastIdFromSelect na mão', lastIdFromSelect['id'])  # type: ignore
+        cursor.scroll(-2)
+        print('rownumber', cursor.rownumber)  # rownumber mostra a linha atual do cursor em selects
+
         connection.commit()
 
         
