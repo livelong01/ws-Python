@@ -1,11 +1,11 @@
-# from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
+
 
 
 def blog(request):
     print('posso fazer outras coisas')
-    return HttpResponse('blog boladaum')
+    return render(request, 'blog/index.html')
 
 def exemplo(request):
     print('posso fazer outras coisas')
-    return HttpResponse('exemplo boladaum')
+    return render(request, 'blog/exemplo.html')
